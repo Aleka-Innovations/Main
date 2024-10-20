@@ -25,22 +25,26 @@
         messageDiv.style.opacity=0;
     },5000);
  }
- const forgotPassword=document.getElementById('forgotPassword');
- let ForgotPassword = ()=>{
+
+ const forgotPassword = document.getElementById("forgotPassword");
+ const forgotEmail = document.getElementById("rEmail");
+
+ forgotPassword.addEventListener("click"), ()=>{
     const auth=getAuth();
-    
-    sendPasswordResetEmail(auth, EmailInp.value)
-    .then(()=>{
-        alert("A password reset link has been sent to your email!")
+    sendPasswordResetEmail(auth, forgotEmail.value)
+    .then(() => {
+        forgotEmail = "";
+
+        alert("A password reset link has been sent to the email.")
     })
-    .catch((error)=>{
-        console.log(error.code)
-        console.log(error.message)
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        alert("Please enter the corrent email.")
     })
  }
-
- forgotPassword.addEventListener("click", ForgotPassword)
-
+ 
  const signUp=document.getElementById('submitSignUp');
  signUp.addEventListener('click', (event)=>{
     event.preventDefault();
