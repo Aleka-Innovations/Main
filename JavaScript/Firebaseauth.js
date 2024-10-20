@@ -28,22 +28,22 @@
 
  const forgotPassword = document.getElementById("forgotPassword");
  const forgotEmail = document.getElementById("rEmail");
-
- forgotPassword.addEventListener("click"), ()=>{
-    const auth=getAuth();
-    sendPasswordResetEmail(auth, forgotEmail.value)
-    .then(() => {
-        forgotEmail = "";
-
-        alert("A password reset link has been sent to the email.")
-    })
-    .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-
-        alert("Please enter the corrent email.")
-    })
- }
+ 
+ forgotPassword.addEventListener("click", () => {
+     const auth = getAuth();
+     sendPasswordResetEmail(auth, forgotEmail.value)
+     .then(() => {
+         forgotEmail.value = ""; // Clear the input field
+ 
+         alert("A password reset link has been sent to the email.");
+     })
+     .catch((error) => {
+         const errorCode = error.code;
+         const errorMessage = error.message;
+ 
+         alert("Please enter the correct email.");
+     });
+ }); 
  
  const signUp=document.getElementById('submitSignUp');
  signUp.addEventListener('click', (event)=>{
