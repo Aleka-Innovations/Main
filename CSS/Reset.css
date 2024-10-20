@@ -37,6 +37,7 @@ label {
     color: #4aa8c5; /* Text color */
     font-weight: bolder;
     font-size: 2vh;
+    margin-bottom: 3vh;
 }
 
 /* Container for Input Fields */
@@ -83,21 +84,6 @@ input[type="password"]::placeholder {
     color: #a9a9a9; /* Placeholder text color */
 }
 
-/* Submit Button Styling */
-.downBTN {
-    font-weight: bolder;
-    align-items: center; /* Center items */
-    padding: 15px 30px; /* Padding */
-    font-size: 16px; /* Font size */
-    color: #fff; /* Text color */
-    gap: 10px; /* Gap between items */
-    border: none; /* No border */
-    border-radius: 10px; /* Rounded corners */
-    background: linear-gradient(270deg, #a3b5f7, #7fcaec); /* Background gradient */
-    cursor: pointer; /* Pointer cursor */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Transition effects */
-}
-
 .upBTN {
     font-weight: bolder;
     align-items: center; /* Center items */
@@ -112,39 +98,12 @@ input[type="password"]::placeholder {
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Transition effects */
 }
 
-.toggle-password {
-    margin-left: 1vh;
-    font-weight: bolder;
-    align-items: center; /* Center items */
-    padding: 15px 15px; /* Padding */
-    font-size: 16px; /* Font size */
-    color: #fff; /* Text color */
-    gap: 10px; /* Gap between items */
-    border: none; /* No border */
-    border-radius: 10px; /* Rounded corners */
-    background: linear-gradient(270deg, #a3b5f7, #7fcaec); /* Background gradient */
-    cursor: pointer; /* Pointer cursor */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Transition effects */
-}
-
-.toggle-password:hover {
-    transform: scale(1.05); /* Scale effect */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Box shadow */
-    background: linear-gradient(270deg, #7fcaec, #a3b5f7); /* Hover gradient */
-}
-
 .upBTN:hover {
     transform: scale(1.05); /* Scale effect */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Box shadow */
     background: linear-gradient(270deg, #7fcaec, #a3b5f7); /* Hover gradient */
 }
 
-/* Hover Effect for Buttons */
-.downBTN:hover {
-    transform: scale(1.05); /* Scale effect */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Box shadow */
-    background: linear-gradient(270deg, #7fcaec, #a3b5f7); /* Hover gradient */
-}
 
 .label-container {
     margin-top: 3vh;

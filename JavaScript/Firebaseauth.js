@@ -34,7 +34,7 @@
 }
 
  const forgotPassword = document.getElementById("forgotPassword");
- const forgotEmail = document.getElementById("rEmail");
+ const forgotEmail = document.getElementById("resetEmail");
  
  forgotPassword.addEventListener("click", () => {
      const auth = getAuth(app);
@@ -47,7 +47,7 @@
      .catch((error) => {
          const errorCode = error.code;
          const errorMessage = error.message;
- 
+         
          alert("Please enter the correct email.");
      });
  }); 
