@@ -56,83 +56,76 @@
 
     <main>
         <section id="main">
-            <div id="signIn" style="display:block;">
-                <h1>Sign In</h1>
-            
-                <form action="" method="post" class="contact-left">
+            <div class="container" id="signUp" style="display:none;">
+                <h1 class="form-title">Register</h1>
+                <form method="post" action="">
                     <div id="signUpMessage" class="messageDiv" style="display:none;"></div>
-                    <div class="contact-left-title">
-                        <h2>Sign in to your account.</h2>
-                        <hr>
-                    </div>
-                    <div class="email-container">
-                       <i class="fas fa-envelope"></i>  <label for="email">E-Mail</label>
-                    </div>
-                    <input type="email" name="email" id="email" placeholder="E-Mail" class="contact-inputs" required>
-                    
-                    <div class="password-container">
-                        <i class="fas fa-user"></i> <label for="password">Password</label>
-                    </div>
-                    <div class="password-container">
-                        <input type="password" id="rPassword" name="password" placeholder="Password" class="contact-inputs" required>
-                        <button type="button" class="toggle-password" onclick="togglePassword('rPassword', this)">
-                            <i class="fas fa-eye"></i>
-                        </button>
-                    </div>
-            
-                    <button type="submit" id="submitSignIn">Login ➤</button>
-                </form>
-            
-                <div class="links">
-                    <p>Already Have Account?</p>
-                    <button id="signInButton">Sign In</button>
-                </div>
-            </div>
-
-            <div id="signUp" style="display:none;">
-                <h1>Register</h1>
-            
-                <form action="" method="post" class="contact-left">
-                    <div class="contact-left-title">
-                        <h2>Create an account.</h2>
-                        <hr>
-                    </div>
-                    <input type="hidden" name="access_key" value="0704f714-db70-4f89-8fe0-7b9d2250e9fa">
-                    
-                    <div class="firtname-container">
-                        <i class="fas fa-user"></i>  <label for="email">Firstname</label>
+                    <div class="label-container">
+                        <i class="fas fa-user"></i>  <label for="password">Firstname</label>
                      </div>
-                    <label for="firstname">Firstname</label>
-                    <input type="text" name="firstname" id="fName" placeholder="Firstname" class="contact-inputs" required>
-                    
-                    <div class="lastname-container">
-                        <i class="fas fa-user"></i>  <label for="email">Lastname</label>
+                    <div class="input-group">
+                        <input type="text" id="fName" placeholder="First Name" required>
+                    </div>
+                    <div class="label-container">
+                        <i class="fas fa-user"></i>  <label for="password">Lastname</label>
                      </div>
-                    <label for="lastname">Lastname</label>
-                    <input type="text" name="lastname" id="lName" placeholder="Lastname" class="contact-inputs" required>
-                    
-                    <div class="email-container">
+                    <div class="input-group">
+                        <input type="text" id="lName" placeholder="Last Name" required>
+                    </div>
+                    <div class="label-container">
                         <i class="fas fa-envelope"></i>  <label for="email">E-Mail</label>
                      </div>
-                    <input type="email" name="email" id="remail" placeholder="E-Mail" class="contact-inputs" required>
-            
-                    <div class="password-container">
-                        <i class="fas fa-user"></i> <label for="password">Password</label>
+                    <div class="input-group">
+                        <input type="email" id="rEmail" placeholder="E-Mail" required>
                     </div>
-                    <label for="password">Password</label>
-                    <div class="password-container">
-                        <input type="password" id="rPassword" name="password" placeholder="Password" class="contact-inputs" required>
+                    <div class="label-container">
+                        <i class="fas fa-lock"></i>  <label for="password">Password</label>
+                     </div>
+                    <div class="input-group">
+                        <input type="password" id="rPassword" placeholder="Password" required>
                         <button type="button" class="toggle-password" onclick="togglePassword('rPassword', this)">
                             <i class="fas fa-eye"></i>
                         </button>
                     </div>
-            
-                    <button type="submit" id="submitSignUp">Create ➤</button>
+                    <br>
+                    <button class="upBTN" id="submitSignUp">Register</button>
                 </form>
-            
+                <br>
+                <div class="links">
+                    <p>Already have an account?</p>
+                    <button id="signInButton" class="downBTN">Sign In</button>
+                </div>
+            </div>
+    
+            <div class="container" id="signIn">
+                <h1 class="form-title">Sign In</h1>
+                <form method="post" action="">
+                    <div id="signInMessage" class="messageDiv" style="display:none;"></div>
+                    <div class="label-container">
+                        <i class="fas fa-envelope"></i>  <label for="email">E-Mail</label>
+                     </div>
+                    <div class="input-group">
+                        <input type="email" id="email" placeholder="E-Mail" required>
+                    </div>
+                    <div class="label-container">
+                        <i class="fas fa-lock"></i> <label for="password">Password</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="password" placeholder="Password" required>
+                        <button type="button" class="toggle-password" onclick="togglePassword('password', this)">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="recover">
+                        <a href="Contact.html">Forgot password?</a>
+                    </div>
+                    <br>
+                    <button class="upBTN" id="submitSignIn">Login</button>
+                </form>
+                <br>
                 <div class="links">
                     <p>Don't have an account yet?</p>
-                    <button id="signUpButton">Sign Up</button>
+                    <button id="signUpButton" class="downBTN">Sign Up</button>
                 </div>
             </div>
         </section>
