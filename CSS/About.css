@@ -1,0 +1,84 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: black; /* Lys bakgrunn for bedre kontrast */
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 20px; /* Padding for å gi litt plass til kanten */
+    max-width: 1200px; /* Begrense maksimal bredde */
+    margin: 0 auto; /* Sentrere sekjonen horisontalt */
+}
+
+#main h1 {
+    font-size: 3rem; /* Maintain the original font size */
+    color: #4aa8c5; /* Set the main text color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for depth */
+    font-weight: bold; /* Make the text bold for emphasis */
+    text-align: center; /* Center the text */
+    margin-top: 150px;
+    margin-bottom: 1rem;
+    margin-bottom: 10vh;
+}
+
+#main p {
+    font-size: 1.25rem;
+    line-height: 1.6; /* Bedre lesbarhet */
+    margin: 0 0 1.5rem; /* Avstand mellom paragraf og andre elementer */
+    max-width: 800px; /* Begrense maksimal bredde på paragrafen */
+    margin-left: auto; /* Sentrere teksten horisontalt */
+    margin-right: auto; /* Sentrere teksten horisontalt */
+    color: white; /* Endre fargen på teksten for bedre lesbarhet */
+}
+
+#main h5 {
+    font-size: 2rem; /* Adjust size for better visibility */
+    font-weight: bold; /* Make the text bold */
+    color: #4aa8c5; /* Main text color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for depth */
+    letter-spacing: 0.05em; /* Slightly increase spacing between letters */
+    text-align: center; /* Center the text */
+    margin: 20px 0; /* Add margin for spacing */
+}
+
+/* Box Styling */
+.box {
+    position: relative;
+    background-color: #003366; /* Dark Blue */
+    border: solid 2px #002244; /* Even Darker Blue */
+    border-radius: 10px;
+    width: 90%; /* Tilpasset for bedre responsivitet */
+    max-width: 800px; /* Begrense maksimal bredde */
+    margin: 20px 0; /* Redusert margin for mindre avstand mellom boksene */
+    padding: 15px; /* Redusert padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.box:hover {
+    background-color: #002244; /* Darker Blue */
+    transform: scale(1.02);
+}
+
+/* Media Queries for Responsive Design */
+@media (min-width: 768px) {
+    .box {
+        width: 80%; /* Reduce width on larger screens */
+    }
+}
+
+@media (min-width: 1200px) {
+    .box {
+        width: 70%; /* Further reduce width for very large screens */
+    }
+}

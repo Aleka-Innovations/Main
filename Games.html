@@ -1,0 +1,125 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <link rel="icon" type="image/x-icon" href="Images/Top.png">
+    <link rel="stylesheet 1" href="CSS/Main.css">
+    <link rel="stylesheet 2" href="CSS/Games.css">
+
+    <script src="JavaScript/Main.js"></script>
+
+    <title>Games</title>
+</head>
+<body>
+    <header class="background-header"></header>
+    
+    <div class="navbar">
+        <div class="logo">
+            <a href="Home.html"><img src="Images/Logo.png"></a>
+        </div>
+
+        <div class="logotext">
+            <a href="Home.html"><p>Mystic Constructions</p></a>
+        </div>
+
+        <div class="maintext">
+            <ul class="links">
+                <li><a href="Home.html" class="underline">Home</a></li>
+                <li><a href="About.html" class="underline">About</a></li>
+                <li><a href="Games.html"class="disabled">Games</a></li>
+                <li><a href="Rules.html" class="underline">Rules</a></li>
+                <li><a href="Contact.html" class="underline">Contact</a></li>
+                <li><a href="News.html" class="underline" id="news">News</a></li>
+            </ul>
+        </div>
+       <div class="button">
+        <a href="JoinUs.html" class="action_btn2">Join Us</a>
+        <a href="InWork.html" class="action_btn">Log in</a>
+       </div>
+        <button class="toggle_btn">☰</button>
+    </div>
+
+    <div class="dropdown_menu">
+        <li><a href="Home.html" class="underline">Home</a></li>
+        <li><a href="About.html" class="underline">About</a></li>
+        <li><a href="Games.html"class="disabled">Games</a></li>
+        <li><a href="Rules.html" class="underline">Rules</a></li>
+        <li><a href="Contact.html" class="underline">Contact</a></li>
+        <li><a href="News.html" class="underline" id="news">News</a></li>
+        <li><a href="JoinUs.html" class="action_btn2">Join Us</a></li>
+        <li><a href="InWork.html" class="action_btn">Log in</a></li>
+    </div>
+
+    <main>
+        <section id="main">
+            <br><br><br><br><br><br><br><br>
+            <h1>Our Games</h1>
+            <div class="card-container">
+                <div class="card">
+                    <img src="Images/PetsBay.png" alt="">
+                    <div class="card-content">
+                        <p>Welcome in Pets Bay! 🐾</p>
+                        <a href="" onclick="PetsBay()" class="btn-play">Play</a>
+                        <a href="Error.html" class="btn">Watch Trailer</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="Images/WonderWorld.png" alt="">
+                    <div class="card-content">
+                        <p>Welcome in Wonder World 🏡 RP
+                            <br>
+                            <br>🐶 Adopt over 20+ cute pets!
+                            <br>📝 Complete Tasks to leveling up your pets so you can give them a wonderful trick! 
+                            <br>💫 Do Every 2 minutes a Wish at the Wishing well to get exclusive rewards!
+                            <br>💎 Join Every day for a Daily Reward!
+                            <br>🧑‍🍳 Work at the Pizza Job to get a reward!
+                            <br>🏝️ Explore a Wonderful World!
+                            … and more
+                            <br>
+                            <br>•|•————————————•|•
+                            - There aren’t any updates at the moment! 
+                            <br>•|•———————————-•|•
+                            <br>
+                            <br>👍👍👍 LIKE & FOLLOW the game for more updates and rewards! 👍👍👍
+                            <br>
+                            <br>🍵 Join our Roblox Group to get updates about the upcoming game! 🍵
+                            <br>
+                            <br>Wonder World // Mystic Construction
+                            <br>
+                            <br>Tags 🏷️: Custom Pets , RP , Adopt & Hatch , Pets , My Custom Pets , Games , 🏡 <br><br></p>
+                        <a href="" onclick="WonderWorld()" class="btn-play">Play</a>
+                        <a href="Error.html" class="btn">Watch Trailer</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <div class="social-container">
+        <img src="Images/Twitter.png" alt="" onclick="Twitter()" class="social">
+        <img src="Images/Discord.png" alt="" onclick="Discord()" class="social">
+    </div>
+    
+    <p class="copyright">© Copyright 2024 Mystic Consutrctions. All rights reserved.</p>
+
+    <script>
+        const toggleBtn = document.querySelector(".toggle_btn")
+        const dropDownMenu = document.querySelector(".dropdown_menu")
+        
+        toggleBtn.onclick = function () {
+
+            dropDownMenu.classList.toggle("open")
+            const isOpen = dropDownMenu.classList.contains("open")
+
+            if (isOpen)
+            {
+                toggleBtn.innerHTML = "➤"
+            } else
+            {
+                toggleBtn.innerHTML = "☰"
+            }
+        }
+    </script>
+</body>
+</html>
