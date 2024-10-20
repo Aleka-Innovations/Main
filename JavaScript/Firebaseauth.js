@@ -13,6 +13,8 @@
     measurementId: "G-ZSBSF9DP0P"
   };
 
+  const app = initializeApp(firebaseConfig);
+
  // Initialize Firebase
  function showMessage(message, divId) {
     var messageDiv = document.getElementById(divId);
@@ -35,7 +37,7 @@
  const forgotEmail = document.getElementById("rEmail");
  
  forgotPassword.addEventListener("click", () => {
-     const auth = getAuth(initializeApp);
+     const auth = getAuth(app);
      sendPasswordResetEmail(auth, forgotEmail.value)
      .then(() => {
          forgotEmail.value = "";
@@ -58,7 +60,7 @@
     const firstName=document.getElementById('fName').value;
     const lastName=document.getElementById('lName').value;
 
-    const auth=getAuth();
+    const auth=getAuth(app);
     const db=getFirestore();
 
     createUserWithEmailAndPassword(auth, email, password)
@@ -96,7 +98,7 @@
     event.preventDefault();
     const email=document.getElementById('email').value;
     const password=document.getElementById('password').value;
-    const auth=getAuth();
+    const auth=getAuth(app);
 
     signInWithEmailAndPassword(auth, email,password)
     .then((userCredential)=>{
