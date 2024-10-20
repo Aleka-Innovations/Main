@@ -35,10 +35,10 @@
  const forgotEmail = document.getElementById("rEmail");
  
  forgotPassword.addEventListener("click", () => {
-     const auth = getAuth();
+     const auth = getAuth(initializeApp);
      sendPasswordResetEmail(auth, forgotEmail.value)
      .then(() => {
-         forgotEmail.value = ""; // Clear the input field
+         forgotEmail.value = "";
  
          alert("A password reset link has been sent to the email.");
      })
@@ -69,7 +69,7 @@
             firstName: firstName,
             lastName:lastName
         };
-        showMessage('Account Created Successfully', 'signUpMessage');
+        showMessage('Account was created successfully!', 'signUpMessage');
         const docRef=doc(db, "users", user.uid);
         setDoc(docRef,userData)
         .then(()=>{
@@ -83,10 +83,10 @@
     .catch((error)=>{
         const errorCode=error.code;
         if(errorCode=='auth/email-already-in-use'){
-            showMessage('Email Address Already Exists !!!', 'signUpMessage');
+            showMessage('Email already exists!', 'signUpMessage');
         }
         else{
-            showMessage('unable to create User', 'signUpMessage');
+            showMessage('Unable to create User.', 'signUpMessage');
         }
     })
  });
