@@ -14,17 +14,22 @@
   };
 
  // Initialize Firebase
- const app = initializeApp(firebaseConfig);
+ function showMessage(message, divId) {
+    var messageDiv = document.getElementById(divId);
 
- function showMessage(message, divId){
-    var messageDiv=document.getElementById(divId);
-    messageDiv.style.display="block";
-    messageDiv.innerHTML=message;
-    messageDiv.style.opacity=1;
-    setTimeout(function(){
-        messageDiv.style.opacity=0;
-    },5000);
- }
+    // Apply styles for visibility, color, and font weight
+    messageDiv.style.display = "block";
+    messageDiv.style.color = "#7fcaec";  // Light blue color
+    messageDiv.style.fontWeight = "bold"; // Bold font
+    messageDiv.style.transition = "opacity 1s"; // Smooth fade transition
+    messageDiv.innerHTML = message;
+    messageDiv.style.opacity = 1;
+
+    // Hide message after 5 seconds with fade out effect
+    setTimeout(function() {
+        messageDiv.style.opacity = 0;
+    }, 5000);
+}
 
  const forgotPassword = document.getElementById("forgotPassword");
  const forgotEmail = document.getElementById("rEmail");
