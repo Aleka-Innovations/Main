@@ -23,7 +23,8 @@ document.addEventListener("DOMContentLoaded", function() {
     // Array med bakgrunnsbilder
     const backgrounds = [
         '/Main/Images/Background1.png',
-        '/Main/Images/Background2.png'
+        '/Main/Images/Background2.png',
+        '/Main/Images/Background3.png'
     ];
 
     // Forhåndslaste alle bakgrunnsbilder
