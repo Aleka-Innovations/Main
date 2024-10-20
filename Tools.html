@@ -53,46 +53,37 @@
 
     <main>
         <section id="main">
-            <br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br>
             <h1>Our Tools</h1>
-            <div class="card-container">
-                <div class="card">
-                    <img src="Images/PetsBay.png" alt="">
-                    <div class="card-content">
-                        <p>Welcome in Pets Bay! 🐾</p>
-                        <a href="" onclick="PetsBay()" class="btn-play">Play</a>
-                        <a href="Error.html" class="btn">Watch Trailer</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="Images/WonderWorld.png" alt="">
-                    <div class="card-content">
-                        <p>Welcome in Wonder World 🏡 RP
-                            <br>
-                            <br>🐶 Adopt over 20+ cute pets!
-                            <br>📝 Complete Tasks to leveling up your pets so you can give them a wonderful trick! 
-                            <br>💫 Do Every 2 minutes a Wish at the Wishing well to get exclusive rewards!
-                            <br>💎 Join Every day for a Daily Reward!
-                            <br>🧑‍🍳 Work at the Pizza Job to get a reward!
-                            <br>🏝️ Explore a Wonderful World!
-                            … and more
-                            <br>
-                            <br>•|•————————————•|•
-                            - There aren’t any updates at the moment! 
-                            <br>•|•———————————-•|•
-                            <br>
-                            <br>👍👍👍 LIKE & FOLLOW the game for more updates and rewards! 👍👍👍
-                            <br>
-                            <br>🍵 Join our Roblox Group to get updates about the upcoming game! 🍵
-                            <br>
-                            <br>Wonder World // Mystic Construction
-                            <br>
-                            <br>Tags 🏷️: Custom Pets , RP , Adopt & Hatch , Pets , My Custom Pets , Games , 🏡 <br><br></p>
-                        <a href="" onclick="WonderWorld()" class="btn-play">Play</a>
-                        <a href="Error.html" class="btn">Watch Trailer</a>
-                    </div>
-                </div>
+            <br><br><br><br><br>
+            <div id="converter">
+                <input type="file" id="fileInput" class="input" accept="image/*">
+                <br>
+
+                <label for="formatSelect">Choose Format:</label>
+                <select id="formatSelect">
+                  <option value="image/jpeg">JPEG</option>
+                  <option value="image/png">PNG</option>
+                  <option value="image/webp">WebP</option>
+                  <option value="image/bmp">BMP</option>
+                  <option value="image/gif">GIF</option>
+                  <option value="image/tiff">TIFF</option>
+                  <option value="image/svg+xml">SVG</option>
+                  <option value="image/x-icon">ICO</option>
+                  <option value="image/heic">HEIC</option>
+                  <option value="image/avif">AVIF</option>
+                </select>
+                <br><br>
+
+                <button id="convertButton" class="container-button">Convert</button>
+                <br><br>
+
+                <canvas id="canvas" style="display:none;"></canvas>
+                <br>
+                <a id="downloadLink" style="display:none;" download="converted-image" class="container-small">Download</a>
+                <p id="error">This image format is not supported for in-browser conversion.</p>
             </div>
+
         </section>
     </main>
     
@@ -121,5 +112,7 @@
             }
         }
     </script>
+
+<script src="JavaScript/Tools.js"></script>
 </body>
 </html>

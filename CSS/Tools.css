@@ -1,91 +1,72 @@
-.card-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 100px;
-}
-
-.card {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    min-height: 300px; /* Set a minimum height for the card */
-    background-color: rgba(0, 0, 0, 0.75);
-    border-radius: 10px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-    margin: 25px;
-}
-
-.card img {
+/* Additional styles for the converter form */
+#converter {
+    background-color: white;
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     width: 100%;
-    height: auto;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.card-content {
+    max-width: 400px;
     text-align: center;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Change this to align items to the top */
-    height: 100%; /* Ensure the card takes full height */
+    margin: 20px auto; /* Adjust margin to center the converter in the Tools page */
 }
 
-.card-content .btn {
+#h2 {
+    color: #264653;
+}
+
+label {
+    font-size: 1rem;
     font-weight: bold;
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: #575757;
+    color: #2a9d8f;
+}
+
+input[type="file"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 2px solid #2a9d8f;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.container-button {
+    background-color: #2a9d8f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform to transition */
+}
+
+.container-button:hover {
+    background-color: #1f776d;
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+.container-small {
     text-decoration: none;
-    border-radius: 5px;
-    margin: 10px;
-    color: #fff;
-    transition: .2s ease;
-}
-
-.card-content .btn:hover {
-    scale: 1.05;
-    background-color: #383838;
-}
-
-.card-content .btn:active {
-    scale: 0.95;
-}
-
-.card-content .btn-play {
-    font-weight: bold;
+    color: white;
+    background-color: #e76f51;
+    padding: 10px 20px;
+    border-radius: 8px;
     display: inline-block;
-    padding: 8px 16px;
-    background-color: #73e269;
-    text-decoration: none;
-    border-radius: 5px;
-    margin: 10px;
-    color: #fff;
-    transition: .2s ease;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform to transition */
 }
 
-.card-content .btn-play:hover {
-    scale: 1.05;
-    background-color: #489941;
+.container-small:hover {
+    background-color: #ac4b33;
+    transform: scale(1.05); /* Slightly increase size on hover */
 }
 
-.card-content .btn-play:active {
-    scale: 0.95;
-}
-
-.card-content h3 {
-    color: #fff;
-    font-size: 30px;
-    margin-bottom: 10px; /* Space between heading and paragraph */
-}
-
-.card-content p {
-    color: #fff;
-    font-size: 20px;
-    line-height: 1.5;
-    margin-top: 0; /* Remove margin above the paragraph */
-    margin-bottom: auto; /* Push the buttons to the bottom */
+#error {
+    color: red;
+    display: none;
 }
 
 h1 {
