@@ -3,7 +3,7 @@ function YouTube() {
 }
 
 function Discord() {
-    window.open("https://discord.gg/QsTVcpG2Tj")
+    window.open("https://discord.gg/F6Qh7wmjNk")
 }
 
 function TikTok() {
@@ -11,20 +11,12 @@ function TikTok() {
 }
 
 function Twitter() {
-    window.open("https://x.com/MysticConst_RLX")
+    window.open("https://x.com/Aleka_2024")
 }
 
 
 function Join() {
-    window.open("https://www.roblox.com/groups/32011927/Mystic-Construction#!/about")
-}
-
-function PetsBay() {
-    window.open("https://www.roblox.com/games/17458909777/Pets-Bay")
-}
-
-function WonderWorld() {
-    window.open("https://www.roblox.com/games/17536932840/Wonder-World-RP")
+    window.open("https://www.roblox.com/groups/3812713/Aleka#!/about")
 }
 
 document.addEventListener("DOMContentLoaded", function() {
