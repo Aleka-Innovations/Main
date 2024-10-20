@@ -99,10 +99,9 @@ a {
     outline: none;
     border-radius: 10px;
     font-size: 0.8rem;
-    font-weight: bold;
+    font-weight: bolder;
     transition: .2s ease;
     display: block;
-    margin-right: 15px;
 }
 
 .action_btn:hover {
@@ -122,7 +121,7 @@ a {
     outline: none;
     border-radius: 10px;
     font-size: 0.8rem;
-    font-weight: bold;
+    font-weight: bolder;
     transition: .2s ease;
     display: block;
 }
@@ -143,6 +142,34 @@ a {
 .disabled {
     pointer-events: none;
     color: #7fcaec;
+}
+
+.BTNdisabled {
+    pointer-events: none;
+    background-color: #186a91;
+    color: #fff;
+    padding: 0.65rem 1.5rem;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: bolder;
+    transition: .2s ease;
+    display: block;
+}
+
+.BTN2disabled {
+    pointer-events: none;
+    background-color: #148657;
+    color: #fff;
+    padding: 0.65rem 1.5rem;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: bolder;
+    transition: .2s ease;
+    display: block;
 }
 
 #news {
@@ -205,18 +232,27 @@ a {
     background-color: rgba(0, 0, 0, 0.75);
 }
 
-.dropdown_menu li a:hover {
-    color: #7fcaec;
-}
-
 .dropdown_menu .action_btn {
-    margin-top: -5px;
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
 .dropdown_menu .action_btn2 {
+    margin-top: -5px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dropdown_menu .BTNdisabled {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dropdown_menu .BTN2disabled {
+    margin-top: -5px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -274,7 +310,24 @@ a {
         display: none;
     }
 
+    .navbar .BTNdisabled {
+        display: none;
+    }
+
+    .navbar .BTN2disabled {
+        display: none;
+    }
+
+
     .action_btn {
+        margin: auto;
+    }
+
+    .BTNdisabled {
+        margin: auto;
+    }
+
+    .BTN2disabled {
         margin: auto;
     }
 

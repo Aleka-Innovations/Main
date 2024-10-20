@@ -1,0 +1,170 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <link rel="icon" type="image/x-icon" href="Images/Logo.png">
+    <link rel="stylesheet 1" href="CSS/Main.css">
+    <link rel="stylesheet 2" href="CSS/Signin.css">
+
+    <script src="JavaScript/Main.js"></script>
+
+    <link rel="stylesheet 3" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script type="module" src="JavaScript/Firebaseauth.js"></script>
+
+    <title>Contact</title>
+</head>
+<body>
+    <header class="background-header"></header>
+    
+    <div class="navbar">
+        <div class="logo">
+            <a href="Home.html"><img src="Images/Logo.png"></a>
+        </div>
+        
+        <div class="logotext">
+            <a href="Home.html"><p>Aleka</p></a>
+        </div>
+
+        <div class="maintext">
+            <ul class="links">
+                <li><a href="Home.html" class="underline">Home</a></li>
+                <li><a href="About.html" class="underline">About</a></li>
+                <li><a href="Tools.html" class="underline">Tools</a></li>
+                <li><a href="Rules.html" class="underline">Rules</a></li>
+                <li><a href="Contact.html" class="underline">Contact</a></li>
+                <li><a href="News.html" class="underline" id="news">News</a></li>
+            </ul>
+        </div>
+       <div class="button">
+        <a href="Signin.html" class="BTNdisabled">Sign In</a>
+        <a href="JoinUs.html" class="action_btn2">Join Us</a>
+       </div>
+        <button class="toggle_btn">☰</button>
+    </div>
+
+    <div class="dropdown_menu">
+        <li><a href="Home.html" class="underline">Home</a></li>
+        <li><a href="About.html" class="underline">About</a></li>
+        <li><a href="Tools.html" class="underline">Tools</a></li>
+        <li><a href="Rules.html" class="underline">Rules</a></li>
+        <li><a href="Contact.html" class="underline">Contact</a></li>
+        <li><a href="News.html" class="underline" id="news">News</a></li>
+        <li><a href="Signin.html" class="BTNdisabled">Sign In</a></li>
+        <li><a href="JoinUs.html" class="action_btn2">Join Us</a></li>
+    </div>
+
+    <main>
+        <section id="main">
+            <div id="signIn" style="display:block;">
+                <h1>Sign In</h1>
+            
+                <form action="" method="post" class="contact-left">
+                    <div id="signUpMessage" class="messageDiv" style="display:none;"></div>
+                    <div class="contact-left-title">
+                        <h2>Sign in to your account.</h2>
+                        <hr>
+                    </div>
+                    <div class="email-container">
+                       <i class="fas fa-envelope"></i>  <label for="email">E-Mail</label>
+                    </div>
+                    <input type="email" name="email" id="email" placeholder="E-Mail" class="contact-inputs" required>
+                    
+                    <div class="password-container">
+                        <i class="fas fa-user"></i> <label for="password">Password</label>
+                    </div>
+                    <div class="password-container">
+                        <input type="password" id="rPassword" name="password" placeholder="Password" class="contact-inputs" required>
+                        <button type="button" class="toggle-password" onclick="togglePassword('rPassword', this)">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+            
+                    <button type="submit" id="submitSignIn">Login ➤</button>
+                </form>
+            
+                <div class="links">
+                    <p>Already Have Account?</p>
+                    <button id="signInButton">Sign In</button>
+                </div>
+            </div>
+
+            <div id="signUp" style="display:none;">
+                <h1>Register</h1>
+            
+                <form action="" method="post" class="contact-left">
+                    <div class="contact-left-title">
+                        <h2>Create an account.</h2>
+                        <hr>
+                    </div>
+                    <input type="hidden" name="access_key" value="0704f714-db70-4f89-8fe0-7b9d2250e9fa">
+                    
+                    <div class="firtname-container">
+                        <i class="fas fa-user"></i>  <label for="email">Firstname</label>
+                     </div>
+                    <label for="firstname">Firstname</label>
+                    <input type="text" name="firstname" id="fName" placeholder="Firstname" class="contact-inputs" required>
+                    
+                    <div class="lastname-container">
+                        <i class="fas fa-user"></i>  <label for="email">Lastname</label>
+                     </div>
+                    <label for="lastname">Lastname</label>
+                    <input type="text" name="lastname" id="lName" placeholder="Lastname" class="contact-inputs" required>
+                    
+                    <div class="email-container">
+                        <i class="fas fa-envelope"></i>  <label for="email">E-Mail</label>
+                     </div>
+                    <input type="email" name="email" id="remail" placeholder="E-Mail" class="contact-inputs" required>
+            
+                    <div class="password-container">
+                        <i class="fas fa-user"></i> <label for="password">Password</label>
+                    </div>
+                    <label for="password">Password</label>
+                    <div class="password-container">
+                        <input type="password" id="rPassword" name="password" placeholder="Password" class="contact-inputs" required>
+                        <button type="button" class="toggle-password" onclick="togglePassword('rPassword', this)">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+            
+                    <button type="submit" id="submitSignUp">Create ➤</button>
+                </form>
+            
+                <div class="links">
+                    <p>Don't have an account yet?</p>
+                    <button id="signUpButton">Sign Up</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="JavaScript/Signin.js"></script>
+    
+<br><br><br><br><br><br><br><br><br><br>
+
+    <div class="social-container">
+        <img src="Images/Twitter.png" alt="" onclick="Twitter()" class="social">
+        <img src="Images/Discord.png" alt="" onclick="Discord()" class="social">
+    </div>
+    <p class="copyright">© Copyright 2024 Aleka. All rights reserved.</p>
+
+    <script>
+        const toggleBtn = document.querySelector(".toggle_btn")
+        const dropDownMenu = document.querySelector(".dropdown_menu")
+        
+        toggleBtn.onclick = function () {
+
+            dropDownMenu.classList.toggle("open")
+            const isOpen = dropDownMenu.classList.contains("open")
+
+            if (isOpen)
+            {
+                toggleBtn.innerHTML = "➤"
+            } else
+            {
+                toggleBtn.innerHTML = "☰"
+            }
+        }
+    </script>
+</body>
+</html>

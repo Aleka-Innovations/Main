@@ -17,6 +17,14 @@ section#main {
     text-align: center; /* Center the text */
 }
 
+label {
+    font-size: 1rem;
+    color: #4aa8c5; /* Set the main text color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for depth */
+    font-weight: bold; /* Make the text bold for emphasis */
+    text-align: center; /* Center the text */
+}
+
 * {
     box-sizing: border-box;
 }
@@ -87,4 +95,11 @@ section#main {
     border-radius: 10px;
     background: linear-gradient(270deg, #a3b5f7, #7fcaec);
     cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.contact-left button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(270deg, #7fcaec, #a3b5f7);
 }
