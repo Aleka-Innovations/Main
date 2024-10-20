@@ -1,6 +1,6 @@
  // Import the functions you need from the SDKs you need
  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
- import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+ import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
  import{getFirestore, setDoc, doc} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js"
  
  const firebaseConfig = {
@@ -25,6 +25,22 @@
         messageDiv.style.opacity=0;
     },5000);
  }
+ const forgotPassword=document.getElementById('forgotPassword');
+ let ForgotPassword = ()=>{
+    const auth=getAuth();
+    
+    sendPasswordResetEmail(auth, EmailInp.value)
+    .then(()=>{
+        alert("A password reset link has been sent to your email!")
+    })
+    .catch((error)=>{
+        console.log(error.code)
+        console.log(error.message)
+    })
+ }
+
+ forgotPassword.addEventListener("click", ForgotPassword)
+
  const signUp=document.getElementById('submitSignUp');
  signUp.addEventListener('click', (event)=>{
     event.preventDefault();

@@ -158,14 +158,14 @@ input[type="password"]::placeholder {
     margin-top: 1vh; /* Space above the link */
 }
 
-.recover a {
+.recover label {
     color: #7fcaec;
     font-size: 1.5vh; /* Adjust font size */
     text-decoration: none; /* Remove underline */
     transition: color 0.3s; /* Smooth transition */
 }
 
-.recover a:hover {
+.recover label:hover {
     color:#a3b5f7; /* Change color on hover */
     text-decoration: underline; /* Underline on hover */
 }
