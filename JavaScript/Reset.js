@@ -23,6 +23,7 @@
      sendPasswordResetEmail(auth, forgotEmail.value)
      .then(() => {
          forgotEmail.value = "";
+         window.location.href = "Signin.html";
  
          alert("A password reset link has been sent to the email.");
      })
