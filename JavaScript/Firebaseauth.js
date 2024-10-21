@@ -1,6 +1,6 @@
  // Import the functions you need from the SDKs you need
  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
- import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+ import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
  import{getFirestore, setDoc, doc} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js"
  
  const firebaseConfig = {
@@ -13,19 +13,45 @@
     measurementId: "G-2LB8TTXY9S"
   };
 
+  const app = initializeApp(firebaseConfig);
 
  // Initialize Firebase
- const app = initializeApp(firebaseConfig);
+ function showMessage(message, divId) {
+    var messageDiv = document.getElementById(divId);
 
- function showMessage(message, divId){
-    var messageDiv=document.getElementById(divId);
-    messageDiv.style.display="block";
-    messageDiv.innerHTML=message;
-    messageDiv.style.opacity=1;
-    setTimeout(function(){
-        messageDiv.style.opacity=0;
-    },5000);
- }
+    // Apply styles for visibility, color, and font weight
+    messageDiv.style.display = "block";
+    messageDiv.style.color = "#7fcaec";  // Light blue color
+    messageDiv.style.fontWeight = "bold"; // Bold font
+    messageDiv.style.transition = "opacity 1s"; // Smooth fade transition
+    messageDiv.innerHTML = message;
+    messageDiv.style.opacity = 1;
+
+    // Hide message after 5 seconds with fade out effect
+    setTimeout(function() {
+        messageDiv.style.opacity = 0;
+    }, 5000);
+}
+
+ const forgotPassword = document.getElementById("forgotPassword");
+ const forgotEmail = document.getElementById("resetEmail");
+ 
+ forgotPassword.addEventListener("click", () => {
+     const auth = getAuth(app);
+     sendPasswordResetEmail(auth, forgotEmail.value)
+     .then(() => {
+         forgotEmail.value = "";
+ 
+         alert("A password reset link has been sent to the email.");
+     })
+     .catch((error) => {
+         const errorCode = error.code;
+         const errorMessage = error.message;
+         
+         alert("Please enter the correct email.");
+     });
+ }); 
+ 
  const signUp=document.getElementById('submitSignUp');
  signUp.addEventListener('click', (event)=>{
     event.preventDefault();
@@ -45,11 +71,11 @@
             firstName: firstName,
             lastName:lastName
         };
-        showMessage('Account Created Successfully', 'signUpMessage');
+        showMessage('Account was created successfully!', 'signUpMessage');
         const docRef=doc(db, "users", user.uid);
         setDoc(docRef,userData)
         .then(()=>{
-            window.location.href='index.html';
+            window.location.href = "Signin.html";
         })
         .catch((error)=>{
             console.error("error writing document", error);
@@ -59,10 +85,10 @@
     .catch((error)=>{
         const errorCode=error.code;
         if(errorCode=='auth/email-already-in-use'){
-            showMessage('Email Address Already Exists !!!', 'signUpMessage');
+            showMessage('Email already exists!', 'signUpMessage');
         }
         else{
-            showMessage('unable to create User', 'signUpMessage');
+            showMessage('Unable to create User.', 'signUpMessage');
         }
     })
  });
@@ -79,7 +105,7 @@
         showMessage('login is successful', 'signInMessage');
         const user=userCredential.user;
         localStorage.setItem('loggedInUserId', user.uid);
-        window.location.href='homepage.html';
+        window.location.href='Home.html';
     })
     .catch((error)=>{
         const errorCode=error.code;
