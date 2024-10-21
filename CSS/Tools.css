@@ -6,7 +6,7 @@
     width: 100%;
     max-width: 400px;
     text-align: center;
-    margin: -150px auto; /* Adjust margin to center the converter in the Tools page */
+    margin: -125px auto; /* Adjust margin to center the converter in the Tools page */
 }
 
 #h2 {
@@ -21,6 +21,8 @@ label {
 
 input[type="file"],
 select {
+    color: white;
+    background-color: black;
     width: 100%;
     padding: 8px;
     margin: 10px 0;
@@ -28,6 +30,7 @@ select {
     border-radius: 8px;
     box-sizing: border-box;
     font-size: 1rem;
+    font-weight: bolder;
 }
 
 .container-button {
