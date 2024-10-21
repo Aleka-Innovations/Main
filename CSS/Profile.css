@@ -11,20 +11,34 @@ section#main {
     color: #4aa8c5; /* Set the main text color */
     margin-top: 175px;
     font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-#main h2 {
-    color: black;
-    font-style: italic;
-    font-weight: bold;
+    margin-bottom: 3rem; /* Increased margin */
 }
 
 #main hr {
     border: none;
     width: 550px;
     height: 5px;
-    background-color: black;
+    background-color: #4aa8c5; /* Updated to main theme color */
     border-radius: 10px;
     margin-bottom: 20px;
+}
+
+/* User Information Section Styles */
+#main div {
+    font-size: 1.6rem; /* Increased font size for better readability */
+    color: #ffffff; /* White text for contrast */
+    margin: 10px auto; /* Increased space between each item */
+    padding: 15px; /* Increased padding for touch targets */
+    border: 1px solid #81d4fa; /* Softer border color */
+    border-radius: 8px; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.1); /* More transparency for background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition effects */
+}
+
+/* Hover Effect for User Info Items */
+#main div:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly darker on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
 }
