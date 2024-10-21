@@ -321,6 +321,28 @@ a {
 }
 
 .action_btn3 {
+    background-color: #38b7f1;
+    color: #fff;
+    padding: 0.65rem 1.5rem;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: bolder;
+    transition: .2s ease;
+    display: block;
+}
+
+.action_btn3:hover {
+    scale: 1.1;
+    background-color: #186a91;
+}
+
+.action_btn3:active {
+    scale: 1;
+}
+
+.action_btn4 {
     color: #fff;
     padding: 0.65rem 1.5rem;
     border: none;
@@ -333,11 +355,11 @@ a {
     scale: 1.3;
 }
 
-.action_btn3:hover {
+.action_btn4:hover {
     scale: 1.5;
 }
 
-.action_btn3:active {
+.action_btn4:active {
     scale: 1.3;
 }
 
@@ -377,6 +399,9 @@ a {
         display: none;
     }
 
+    .action_btn3 {
+        margin-right: 50px;
+    }
 
     .action_btn {
         margin: auto;
