@@ -29,7 +29,7 @@ onAuthStateChanged(auth, (user) => {
                     // Set the last name to signUpName
                     document.getElementById('signUpName').innerText = userData.lastName;
                     // Make the signUpText visible
-                    document.getElementById('signUpText').style.display = 'block';
+                    document.getElementById('signUpName').style.display = 'block';
                     document.getElementById('logout').style.display = 'block';
                     document.getElementById('signInButton').style.display = 'none';
                 } else {
@@ -51,7 +51,7 @@ logoutButton.addEventListener('click', () => {
     signOut(auth)
         .then(() => {
             window.location.href = 'SignIn.html';
-            document.getElementById('signUpText').style.display = 'none';
+            document.getElementById('signUpName').style.display = 'none';
             document.getElementById('logout').style.display = 'none';
             document.getElementById('signInButton').style.display = 'block';
         })
