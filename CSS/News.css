@@ -33,15 +33,24 @@ section#main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 30px; /* Increased gap between tweets */
   margin: 20px;
 }
 
+/* Styling for each tweet block */
 .twitter-tweet {
-  max-width: 300px;
-  flex: 1;
-  margin: 0;
-  padding: 10px;
+  flex: 0 1 45%; /* Allow the tweet to take up to 45% of the container width */
+  max-width: 600px; /* Ensure it doesn't grow too wide */
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.twitter-tweet:hover {
+  transform: scale(1.05); /* Slightly enlarges the tweet on hover */
 }
 
 @media (max-width: 1200px) {

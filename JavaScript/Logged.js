@@ -49,7 +49,6 @@ logoutButton.addEventListener('click', () => {
     localStorage.removeItem('loggedInUserId');
     signOut(auth)
         .then(() => {
-            window.location.href = 'Signin.html';
             document.getElementById('signUpName').style.display = 'none';
             document.getElementById('logout').style.display = 'none';
             document.getElementById('navBarSignIn').style.display = 'block';
