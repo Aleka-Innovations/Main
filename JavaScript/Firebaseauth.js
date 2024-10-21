@@ -45,22 +45,17 @@ signUp.addEventListener('click', (event) => {
     const lastName = document.getElementById('lName').value;
 
     // Check if the required fields are filled
-    if (!firstName) {
-        showMessage('Please enter your first name!', 'signUpMessage');
-        return; 
-    }
-    if (!lastName) {
-        showMessage('Please enter your last name!', 'signUpMessage');
-        return; 
-    }
-    if (!isValidEmail(email)) {
-        showMessage('Please enter a valid email address!', 'signUpMessage');
-        return; 
-    }
-    if (!password) {
-        showMessage('Please enter your password!', 'signUpMessage');
-        return; 
-    }
+    
+// Check if the required fields are filled
+if (!isValidEmail(email)) {
+    showMessage('Please enter a valid email address!', 'signUpMessage');
+    return; 
+}
+
+if (!firstName || !lastName || !password) {
+    showMessage('Please fill out the required details.', 'signUpMessage');
+    return; 
+}
 
     const auth = getAuth(app);
     const db = getFirestore();
