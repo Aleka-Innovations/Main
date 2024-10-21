@@ -33,26 +33,24 @@
     }, 5000);
 }
 
-window.addEventListener("DOMContentLoaded", (event) => {
-    const forgotPassword = document.getElementById("forgotPassword");
-    const forgotEmail = document.getElementById("resetEmail");
-    
-    forgotPassword.addEventListener("click", () => {
-        const auth = getAuth(app);
-        sendPasswordResetEmail(auth, forgotEmail.value)
-        .then(() => {
-            forgotEmail.value = "";
-    
-            alert("A password reset link has been sent to the email.");
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            
-            alert("Please enter the correct email.");
-        });
-    }); 
-});
+ const forgotPassword = document.getElementById("forgotPassword");
+ const forgotEmail = document.getElementById("resetEmail");
+ 
+ forgotPassword.addEventListener("click", () => {
+     const auth = getAuth(app);
+     sendPasswordResetEmail(auth, forgotEmail.value)
+     .then(() => {
+         forgotEmail.value = "";
+ 
+         alert("A password reset link has been sent to the email.");
+     })
+     .catch((error) => {
+         const errorCode = error.code;
+         const errorMessage = error.message;
+         
+         alert("Please enter the correct email.");
+     });
+ }); 
  
  const signUp=document.getElementById('submitSignUp');
  signUp.addEventListener('click', (event)=>{
