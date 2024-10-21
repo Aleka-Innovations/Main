@@ -30,15 +30,9 @@ const firebaseConfig = {
                 const emailElement = document.getElementById('loggedUserEmail');
                 const lastNameElement = document.getElementById('loggedUserLName');
             
-                firstNameElement.innerText = "";  // Clear existing text (optional)
                 firstNameElement.innerText = userData.firstName;  // Set new value
-            
-                emailElement.innerText = "";  // Clear existing text (optional)
                 emailElement.innerText = userData.email;  // Set new value
-            
-                lastNameElement.innerText = "";  // Clear existing text (optional)
                 lastNameElement.innerText = userData.lastName;  // Set new value
-
             }
             else{
                 console.log("no document found matching id")
