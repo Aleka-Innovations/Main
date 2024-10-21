@@ -305,6 +305,27 @@ a {
     transform: scale(0.9);
 }
 
+.action_btn3 {
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3); /* Example shadow */
+    color: #fff;
+    padding: 0.65rem 1.5rem;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: bolder;
+    transition: .2s ease;
+    display: block;
+}
+
+.action_btn3:hover {
+    scale: 1.05;
+}
+
+.action_btn3:active {
+    scale: 0.95;
+}
+
 /* Copyright */
 
 .copyright {

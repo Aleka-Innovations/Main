@@ -26,8 +26,7 @@ onAuthStateChanged(auth, (user) => {
             .then((docSnap) => {
                 if (docSnap.exists()) {
                     const userData = docSnap.data();
-                    console.log(userData)
-                    document.getElementById('signUpName').innerText = userData.firstname;
+                    document.getElementById('signUpName').innerText = userData.firstName;
 
                     document.getElementById('signUpName').style.display = 'block';
                     document.getElementById('logout').style.display = 'block';
