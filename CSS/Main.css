@@ -68,11 +68,26 @@ a {
 
 .logotext {
     margin-left: 10px;
+    transform: scale(1);
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.logotext:hover {
+    margin-left: 10px;
+    transform: scale(1.1);
 }
 
 .logo img {
     width: 50px;
     border-radius: 5px;
+    transform: scale(1);
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.logo img:hover {
+    width: 50px;
+    border-radius: 5px;
+    transform: scale(1.1);
 }
 
 .navbar .links {
@@ -196,6 +211,14 @@ a {
     left: 0;
     bottom: -5px;
     transition: .2s;
+}
+
+.navbar ul li {
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for both color and size */
+}
+
+.navbar ul li:hover {
+    transform: scale(1.1);
 }
 
 .navbar ul li a.underline:hover:after {
