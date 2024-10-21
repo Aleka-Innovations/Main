@@ -2,11 +2,10 @@
 #converter {
     padding: 50px;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 400px;
     text-align: center;
-    margin: -125px auto; /* Adjust margin to center the converter in the Tools page */
+    margin: -150px auto; /* Adjust margin to center the converter in the Tools page */
 }
 
 #h2 {
