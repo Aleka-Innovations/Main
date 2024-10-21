@@ -103,6 +103,7 @@ input[type="password"]::placeholder {
 }
 
 .upBTN {
+    margin-top: 1vh;
     font-weight: bolder;
     align-items: center; /* Center items */
     padding: 15px 70px; /* Padding */
@@ -162,6 +163,7 @@ input[type="password"]::placeholder {
 .recover {
     align-self: flex-end; /* Align the recover link to the right */
     margin-top: 1vh; /* Space above the link */
+    margin-left: 50%; /* Adjust this value to shift further right */
 }
 
 .recover a {

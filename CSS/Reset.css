@@ -85,6 +85,7 @@ input[type="password"]::placeholder {
 }
 
 .upBTN {
+    margin-top: 1vh;
     font-weight: bolder;
     align-items: center; /* Center items */
     padding: 15px 70px; /* Padding */
