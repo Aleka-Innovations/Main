@@ -4,13 +4,13 @@
  import{getFirestore, setDoc, doc} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js"
  
  const firebaseConfig = {
-    apiKey: "AIzaSyAKUpKJ3TBR3-fIM-kEJ6_pSSGTVxZnZVQ",
-    authDomain: "aleka-c4790.firebaseapp.com",
-    projectId: "aleka-c4790",
-    storageBucket: "aleka-c4790.appspot.com",
-    messagingSenderId: "358857680130",
-    appId: "1:358857680130:web:159848807539e8d5480e1b",
-    measurementId: "G-ZSBSF9DP0P"
+    apiKey: "AIzaSyBJft09DwFK1UPkqAW_S9k-TXTb0PnrzRE",
+    authDomain: "aleka-be469.firebaseapp.com",
+    projectId: "aleka-be469",
+    storageBucket: "aleka-be469.appspot.com",
+    messagingSenderId: "404498275934",
+    appId: "1:404498275934:web:e065a5169a4cabee551ecf",
+    measurementId: "G-2LB8TTXY9S"
   };
 
   const app = initializeApp(firebaseConfig);
