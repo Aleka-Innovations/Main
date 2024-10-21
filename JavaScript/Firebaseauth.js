@@ -73,7 +73,7 @@ signUp.addEventListener('click', (event) => {
                 firstName: firstName,
                 lastName: lastName
             };
-            showMessage('Account was created successfully! A verification email has been sent.', 'signUpMessage');
+            showMessage('A verification email has been sent to your E-Mail.', 'signUpMessage');
             
             // Send email verification
             sendEmailVerification(user)
