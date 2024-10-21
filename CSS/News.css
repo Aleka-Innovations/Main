@@ -10,7 +10,7 @@ section#main {
 
 #main h1 {
   color: orange;
-  margin-top: 75px; /* Reduced margin for better vertical centering */
+  margin-top: 150px; /* Reduced margin for better vertical centering */
   font-size: 2.5rem; /* Slightly smaller for a more compact look */
   margin-bottom: 0.5rem; /* Reduced margin for tighter layout */
 }
