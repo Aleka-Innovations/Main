@@ -31,7 +31,6 @@ forgotPassword.addEventListener("click", () => {
 
     // Check if the email is valid
     if (!isValidEmail(email)) {
-        alert("Please enter a valid email address!");
         return; // Exit the function if the email is invalid
     }
 
