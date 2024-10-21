@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
 import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -18,8 +18,6 @@ const app = initializeApp(firebaseConfig);
 // Initialize Firebase
 function showMessage(message, divId) {
     var messageDiv = document.getElementById(divId);
-
-    // Apply styles for visibility, color, and font weight
     messageDiv.style.display = "block";
     messageDiv.style.color = "#7fcaec";  // Light blue color
     messageDiv.style.fontWeight = "bold"; // Bold font
@@ -27,7 +25,6 @@ function showMessage(message, divId) {
     messageDiv.innerHTML = message;
     messageDiv.style.opacity = 1;
 
-    // Hide message after 5 seconds with fade out effect
     setTimeout(function () {
         messageDiv.style.opacity = 0;
     }, 5000);
@@ -35,7 +32,6 @@ function showMessage(message, divId) {
 
 // Email validation function
 function isValidEmail(email) {
-    // Regular expression for validating an Email
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(email);
 }
@@ -65,14 +61,26 @@ signUp.addEventListener('click', (event) => {
                 firstName: firstName,
                 lastName: lastName
             };
-            showMessage('Account was created successfully!', 'signUpMessage');
-            const docRef = doc(db, "users", user.uid);
-            setDoc(docRef, userData)
+            showMessage('Account was created successfully! A verification email has been sent.', 'signUpMessage');
+            
+            // Send email verification
+            sendEmailVerification(user)
                 .then(() => {
-                    window.location.href = "Signin.html";
+                    // Verification email sent. You can log user out or keep them logged in.
+                    // For example, you might want to redirect to a "check your email" page.
+                    const docRef = doc(db, "users", user.uid);
+                    setDoc(docRef, userData)
+                        .then(() => {
+                            // Optionally log out the user if you want them to verify before logging in
+                            // auth.signOut();
+                            // window.location.href = "Signin.html"; // Redirect to sign-in page
+                        })
+                        .catch((error) => {
+                            console.error("Error writing document", error);
+                        });
                 })
                 .catch((error) => {
-                    console.error("Error writing document", error);
+                    console.error("Error sending email verification", error);
                 });
         })
         .catch((error) => {
@@ -109,10 +117,14 @@ signIn.addEventListener('click', (event) => {
     
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            showMessage('Login is successful', 'signInMessage');
             const user = userCredential.user;
-            localStorage.setItem('loggedInUserId', user.uid);
-            window.location.href = 'Home.html';
+            if (user.emailVerified) {
+                showMessage('Login is successful', 'signInMessage');
+                localStorage.setItem('loggedInUserId', user.uid);
+                window.location.href = 'Home.html';
+            } else {
+                showMessage('Please verify your email before logging in.', 'signInMessage');
+            }
         })
         .catch((error) => {
             const errorCode = error.code;
