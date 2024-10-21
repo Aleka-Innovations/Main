@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
 import { getAuth, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
-import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBJft09DwFK1UPkqAW_S9k-TXTb0PnrzRE",
@@ -14,14 +14,13 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 const forgotPassword = document.getElementById("forgotPassword");
 const forgotEmail = document.getElementById("resetEmail");
 
 function showMessage(message, divId) {
     var messageDiv = document.getElementById(divId);
-
-    // Apply styles for visibility, color, and font weight
     messageDiv.style.display = "block";
     messageDiv.style.color = "#7fcaec";  // Light blue color
     messageDiv.style.fontWeight = "bold"; // Bold font
@@ -37,12 +36,11 @@ function showMessage(message, divId) {
 
 // Email validation function
 function isValidEmail(email) {
-    // Regular expression for validating an Email
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(email);
 }
 
-forgotPassword.addEventListener("click", () => {
+forgotPassword.addEventListener("click", async () => {
     const auth = getAuth(app);
     const email = forgotEmail.value;
 
@@ -58,6 +56,18 @@ forgotPassword.addEventListener("click", () => {
         return;
     }
 
+    // Check if the user exists in Firestore
+    const userDocRef = doc(db, "users", email); // Adjust collection name as needed
+    const userDoc = await getDoc(userDocRef);
+
+    if (!userDoc.exists()) {
+        // User does not exist
+        showMessage("There is no user with that email address.", "signUpMessage");
+        forgotPassword.textContent = "Reset";
+        forgotPassword.disabled = false;  // Re-enable the button
+        return;
+    }
+
     // Send the password reset email
     sendPasswordResetEmail(auth, email)
         .then(() => {
@@ -69,7 +79,7 @@ forgotPassword.addEventListener("click", () => {
 
             // Redirect after a short delay to give the user feedback
             setTimeout(() => {
-                forgotPassword.textContent = "Reset"; // Change the button text to "Sent"
+                forgotPassword.textContent = "Reset"; // Change the button text to "Reset"
                 window.location.href = "Signin.html";
             }, 1000);
         })
@@ -81,8 +91,6 @@ forgotPassword.addEventListener("click", () => {
             // Check if the error is related to a network failure
             if (errorCode === 'auth/network-request-failed') {
                 showMessage("Network error. Please check your connection and try again.", "signUpMessage"); // Change to showMessage
-            } else if (errorCode === 'auth/user-not-found') {
-                showMessage("There is no user with that email address.", "signUpMessage"); // Change to showMessage
             } else {
                 showMessage("Error: " + errorMessage, "signUpMessage"); // Change to showMessage
             }
