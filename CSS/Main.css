@@ -77,6 +77,11 @@ a {
     transform: scale(1.1);
 }
 
+.logotext:active {
+    margin-left: 10px;
+    transform: scale(1);
+}
+
 .logo img {
     width: 50px;
     border-radius: 5px;
@@ -88,6 +93,12 @@ a {
     width: 50px;
     border-radius: 5px;
     transform: scale(1.1);
+}
+
+.logo img:active {
+    width: 50px;
+    border-radius: 5px;
+    transform: scale(1);
 }
 
 .navbar .links {
@@ -120,12 +131,12 @@ a {
 }
 
 .action_btn:hover {
-    scale: 1.05;
+    scale: 1.1;
     background-color: #186a91;
 }
 
 .action_btn:active {
-    scale: 0.95;
+    scale: 1;
 }
 
 .action_btn2 {
@@ -142,12 +153,12 @@ a {
 }
 
 .action_btn2:hover {
-    scale: 1.05;
+    scale: 1.1;
     background-color: #148657;
 }
 
 .action_btn2:active {
-    scale: 0.95;
+    scale: 1;
 }
 
 .navbar ul li a.underline:hover {
@@ -219,6 +230,10 @@ a {
 
 .navbar ul li:hover {
     transform: scale(1.1);
+}
+
+.navbar ul li:active {
+    transform: scale(1);
 }
 
 .navbar ul li a.underline:hover:after {
@@ -306,7 +321,6 @@ a {
 }
 
 .action_btn3 {
-    background-color: rgba(255, 255, 255, .1);
     color: #fff;
     padding: 0.65rem 1.5rem;
     border: none;
@@ -316,14 +330,15 @@ a {
     font-weight: bolder;
     transition: .2s ease;
     display: block;
+    scale: 1.3;
 }
 
 .action_btn3:hover {
-    scale: 1.05;
+    scale: 1.5;
 }
 
 .action_btn3:active {
-    scale: 0.95;
+    scale: 1.3;
 }
 
 /* Copyright */
