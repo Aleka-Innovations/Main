@@ -3,7 +3,8 @@ section#main {
     height: calc(100vh - 50vh); /* Adjusted height */
     display: flex; /* Flexbox layout */
     flex-direction: column; /* Vertical layout */
-    align-items: center; /* Centered alignment */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
     text-align: center; /* Center text */
     color: #fff; /* White text color */
 }
@@ -42,7 +43,10 @@ label {
 /* Container for Input Fields */
 .input-group {
     display: flex; /* Flexbox layout */
-    align-items: center; /* Center items vertically */
+    align-items: flex-start; /* Align items at the start (top) */
+    justify-content: space-between; /* Space items evenly */
+    width: 100%; /* Full width */
+    margin-top: 1vh; /* Space between label and input fields */
 }
 
 /* Input Container Styling */
@@ -146,15 +150,17 @@ input[type="password"]::placeholder {
     background: linear-gradient(270deg, #7fcaec, #a3b5f7); /* Hover gradient */
 }
 
+/* Label Container */
 .label-container {
     margin-top: 3vh;
     margin-bottom: 1vh;
-   text-align: left;
+    text-align: left; /* Keep text left-aligned */
+    width: 100%; /* Full width */
 }
 
-/* Add this to your CSS file (e.g., Signin.css) */
+/* Adjustments for .recover */
 .recover {
-    margin-left: 25vh;
+    align-self: flex-end; /* Align the recover link to the right */
     margin-top: 1vh; /* Space above the link */
 }
 
@@ -166,6 +172,40 @@ input[type="password"]::placeholder {
 }
 
 .recover a:hover {
-    color:#a3b5f7; /* Change color on hover */
+    color: #a3b5f7; /* Change color on hover */
     text-decoration: underline; /* Underline on hover */
+}
+
+/* Responsive Design */
+@media (min-width: 992px) {
+
+}
+
+@media (max-width: 576px) {
+    /* Responsive styles for smaller screens */
+    .label-container {
+        margin-left: 5%;
+    }
+
+    #contact-inputs,
+    input[type="email"],
+    input[type="text"],
+    input[type="password"] {
+        width: 90%; /* Increase width on smaller screens */
+        height: 60px; /* Increase height on smaller screens */
+        font-size: 1.2rem; /* Increase font size for better visibility */
+        margin-left: 5%; /* Keep left margin */
+    }
+
+    .downBTN,
+    .upBTN,
+    .toggle-password {
+        padding: 20px 20px; /* Adjust button padding */
+        font-size: 1.1rem; /* Slightly increase button font size */
+    }
+
+    /* Increase textarea size for smaller screens */
+    textarea {
+        height: 160px; /* Increase textarea height */
+    }
 }
