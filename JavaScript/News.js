@@ -32,8 +32,11 @@ onAuthStateChanged(auth, (user) => {
                 
                     newsText.style.display = "block";
                     signText.style.display = "none";
-                    newsDisplay.style.display = "block";
+                    newsDisplay.style.display = "flex";
                 } else {
+                    newsText.style.display = "none";
+                    signText.style.display = "block";
+                    newsDisplay.style.display = "none";
                     console.log("No document found matching id");
                 }
             })

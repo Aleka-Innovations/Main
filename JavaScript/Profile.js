@@ -46,16 +46,3 @@ const firebaseConfig = {
         console.log("User Id not Found in Local storage")
     }
   })
-
-  const logoutButton=document.getElementById('logout');
-
-  logoutButton.addEventListener('click',()=>{
-    localStorage.removeItem('loggedInUserId');
-    signOut(auth)
-    .then(()=>{
-        window.location.href='index.html';
-    })
-    .catch((error)=>{
-        console.error('Error Signing out:', error);
-    })
-  })
