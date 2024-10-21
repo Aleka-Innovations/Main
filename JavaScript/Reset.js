@@ -34,16 +34,29 @@ forgotPassword.addEventListener("click", () => {
         return; // Exit the function if the email is invalid
     }
 
+    // Change the button text to "Sent"
+    forgotPassword.textContent = "Sent";
+
+    // Send the password reset email
     sendPasswordResetEmail(auth, email)
         .then(() => {
             forgotEmail.value = ""; // Clear the email input
-            window.location.href = "Signin.html";
+            
+            // Set a timeout to change the button text back after 1 second
+            setTimeout(() => {
+                forgotPassword.textContent = "Reset"; // Change text back to "Reset"
+            }, 1000);
+            
             alert("A password reset link has been sent to the email.");
+            window.location.href = "Signin.html";
         })
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
 
             alert("Error: " + errorMessage); // Display the error message
+            
+            // Revert button text to "Reset" in case of an error
+            forgotPassword.textContent = "Reset";
         });
 });
