@@ -52,7 +52,7 @@ forgotPassword.addEventListener("click", () => {
 
     // Check if the email is valid
     if (!isValidEmail(email)) {
-        showMessage("Please enter a valid email address.", "messageDiv"); // Change to showMessage
+        showMessage("Please enter a valid email address.", "signUpMessage"); // Change to showMessage
         forgotPassword.textContent = "Reset"; // Reset button text
         forgotPassword.disabled = false;  // Enable button again
         return;
@@ -65,10 +65,11 @@ forgotPassword.addEventListener("click", () => {
             forgotEmail.value = ""; // Clear the email input field
             forgotPassword.textContent = "Sent"; // Change the button text to "Sent"
 
-            showMessage("A password reset link has been sent to the provided email address.", "messageDiv"); // Change to showMessage
+            showMessage("A password reset link has been sent to the provided email address.", "signUpMessage"); // Change to showMessage
 
             // Redirect after a short delay to give the user feedback
             setTimeout(() => {
+                forgotPassword.textContent = "Reset"; // Change the button text to "Sent"
                 window.location.href = "Signin.html";
             }, 1000);
         })
@@ -79,11 +80,11 @@ forgotPassword.addEventListener("click", () => {
 
             // Check if the error is related to a network failure
             if (errorCode === 'auth/network-request-failed') {
-                showMessage("Network error. Please check your connection and try again.", "messageDiv"); // Change to showMessage
+                showMessage("Network error. Please check your connection and try again.", "signUpMessage"); // Change to showMessage
             } else if (errorCode === 'auth/user-not-found') {
-                showMessage("There is no user with that email address.", "messageDiv"); // Change to showMessage
+                showMessage("There is no user with that email address.", "signUpMessage"); // Change to showMessage
             } else {
-                showMessage("Error: " + errorMessage, "messageDiv"); // Change to showMessage
+                showMessage("Error: " + errorMessage, "signUpMessage"); // Change to showMessage
             }
 
             // Revert button state back to "Reset" in case of any error
