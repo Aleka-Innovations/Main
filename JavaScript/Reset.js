@@ -53,10 +53,12 @@ forgotPassword.addEventListener("click", () => {
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-
-            alert("Error: " + errorMessage); // Display the error message
             
-            // Revert button text to "Reset" in case of an error
-            forgotPassword.textContent = "Reset";
+            setTimeout(() => {
+                forgotPassword.textContent = "Reset"; // Change text back to "Reset"
+            }, 1000);
+
+            alert("A password reset link has been sent to the email.");
+            window.location.href = "Signin.html";
         });
 });
