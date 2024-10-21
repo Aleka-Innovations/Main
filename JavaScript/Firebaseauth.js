@@ -44,10 +44,22 @@ signUp.addEventListener('click', (event) => {
     const firstName = document.getElementById('fName').value;
     const lastName = document.getElementById('lName').value;
 
-    // Check if the email is valid
+    // Check if the required fields are filled
+    if (!firstName) {
+        showMessage('Please enter your first name!', 'signUpMessage');
+        return; 
+    }
+    if (!lastName) {
+        showMessage('Please enter your last name!', 'signUpMessage');
+        return; 
+    }
     if (!isValidEmail(email)) {
         showMessage('Please enter a valid email address!', 'signUpMessage');
-        return; // Exit the function if the email is invalid
+        return; 
+    }
+    if (!password) {
+        showMessage('Please enter your password!', 'signUpMessage');
+        return; 
     }
 
     const auth = getAuth(app);
@@ -66,8 +78,6 @@ signUp.addEventListener('click', (event) => {
             // Send email verification
             sendEmailVerification(user)
                 .then(() => {
-                    // Verification email sent. You can log user out or keep them logged in.
-                    // For example, you might want to redirect to a "check your email" page.
                     const docRef = doc(db, "users", user.uid);
                     setDoc(docRef, userData)
                         .then(() => {
@@ -100,19 +110,22 @@ signIn.addEventListener('click', (event) => {
     const password = document.getElementById('password').value;
     const auth = getAuth(app);
 
-    // Check if the email is valid
+    // Check if the email and password fields are filled
     if (!email && !password) {
         showMessage('Please enter both email and password!', 'signInMessage');
-        return; // Exit the function if both fields are empty
-    } else if (!email) {
+        return; 
+    } 
+    if (!email) {
         showMessage('Please enter your email address!', 'signInMessage');
-        return; // Exit the function if email is empty
-    } else if (!password) {
+        return; 
+    } 
+    if (!password) {
         showMessage('Please enter your password!', 'signInMessage');
-        return; // Exit the function if password is empty
-    } else if (!isValidEmail(email)) {
+        return; 
+    } 
+    if (!isValidEmail(email)) {
         showMessage('Please enter a valid email address!', 'signInMessage');
-        return; // Exit the function if the email is invalid
+        return; 
     }
     
     signInWithEmailAndPassword(auth, email, password)

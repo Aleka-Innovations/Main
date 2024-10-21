@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-import { getAuth, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+import { getAuth, sendPasswordResetEmail, getUserByEmail } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
 import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -47,7 +47,7 @@ forgotPassword.addEventListener("click", () => {
     const email = forgotEmail.value;
 
     // Clear any previous messages or states
-    forgotPassword.textContent = "Sending..."; // Show sending state
+    forgotPassword.textContent = "Checking..."; // Show checking state
     forgotPassword.disabled = true;  // Disable button to prevent multiple clicks
 
     // Check if the email is valid
@@ -58,36 +58,42 @@ forgotPassword.addEventListener("click", () => {
         return;
     }
 
-    // Send the password reset email
-    sendPasswordResetEmail(auth, email)
-        .then(() => {
-            // Success: Email has been sent
-            forgotEmail.value = ""; // Clear the email input field
-            forgotPassword.textContent = "Sent"; // Change the button text to "Sent"
+    // Check if the user exists
+    getUserByEmail(auth, email)
+        .then((userRecord) => {
+            // User exists, proceed to send password reset email
+            sendPasswordResetEmail(auth, email)
+                .then(() => {
+                    // Success: Email has been sent
+                    forgotEmail.value = ""; // Clear the email input field
+                    forgotPassword.textContent = "Sent"; // Change the button text to "Sent"
 
-            showMessage("A password reset link has been sent to the provided email address.", "signUpMessage"); // Change to showMessage
+                    showMessage("A password reset link has been sent to the provided email address.", "signUpMessage"); // Change to showMessage
 
-            // Redirect after a short delay to give the user feedback
-            setTimeout(() => {
-                forgotPassword.textContent = "Reset"; // Change the button text to "Sent"
-                window.location.href = "Signin.html";
-            }, 1000);
+                    // Redirect after a short delay to give the user feedback
+                    setTimeout(() => {
+                        forgotPassword.textContent = "Reset"; // Change the button text to "Sent"
+                        window.location.href = "Signin.html";
+                    }, 1000);
+                })
+                .catch((error) => {
+                    // Handle errors while sending email
+                    const errorMessage = error.message;
+                    showMessage("Error: " + errorMessage, "signUpMessage"); // Change to showMessage
+
+                    // Revert button state back to "Reset" in case of any error
+                    forgotPassword.textContent = "Reset";
+                    forgotPassword.disabled = false;  // Re-enable the button
+                });
         })
         .catch((error) => {
-            // Handle errors here
-            const errorCode = error.code;
-            const errorMessage = error.message;
-
-            // Check if the error is related to a network failure
-            if (errorCode === 'auth/network-request-failed') {
-                showMessage("Network error. Please check your connection and try again.", "signUpMessage"); // Change to showMessage
-            } else if (errorCode === 'auth/user-not-found') {
+            // User does not exist
+            if (error.code === 'auth/user-not-found') {
                 showMessage("There is no user with that email address.", "signUpMessage"); // Change to showMessage
             } else {
-                showMessage("Error: " + errorMessage, "signUpMessage"); // Change to showMessage
+                showMessage("Error fetching user data: " + error.message, "signUpMessage"); // Change to showMessage
             }
-
-            // Revert button state back to "Reset" in case of any error
+            // Revert button state back to "Reset"
             forgotPassword.textContent = "Reset";
             forgotPassword.disabled = false;  // Re-enable the button
         });
