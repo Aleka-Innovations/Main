@@ -306,7 +306,7 @@ a {
 }
 
 .action_btn3 {
-    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3); /* Example shadow */
+    background-color: rgba(255, 255, 255, .1);
     color: #fff;
     padding: 0.65rem 1.5rem;
     border: none;
