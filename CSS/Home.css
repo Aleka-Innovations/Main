@@ -134,6 +134,26 @@ h1 {
     transform: scale(1.1); /* Scale up on hover */
 }
 
+.action_btn3 {
+    color: #fff;
+    padding: 0.65rem 1.5rem;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: bolder;
+    transition: .2s ease;
+    display: block;
+}
+
+.action_btn3:hover {
+    scale: 1.05;
+}
+
+.action_btn3:active {
+    scale: 0.95;
+}
+
 /* Mobile Friendly Styles */
 @media (max-width: 500px) {
     .feedback-input-container {

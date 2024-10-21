@@ -30,6 +30,8 @@ onAuthStateChanged(auth, (user) => {
                     document.getElementById('signUpName').innerText = userData.lastName;
                     // Make the signUpText visible
                     document.getElementById('signUpText').style.display = 'block';
+                    document.getElementById('logout').style.display = 'block';
+                    document.getElementById('signInButton').style.display = 'none';
                 } else {
                     console.log("No document found matching id");
                 }
@@ -48,7 +50,10 @@ logoutButton.addEventListener('click', () => {
     localStorage.removeItem('loggedInUserId');
     signOut(auth)
         .then(() => {
-            window.location.href = 'index.html';
+            window.location.href = 'SignIn.html';
+            document.getElementById('signUpText').style.display = 'none';
+            document.getElementById('logout').style.display = 'none';
+            document.getElementById('signInButton').style.display = 'block';
         })
         .catch((error) => {
             console.error('Error Signing out:', error);
