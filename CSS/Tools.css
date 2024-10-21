@@ -1,13 +1,12 @@
 /* Additional styles for the converter form */
 #converter {
-    background-color: white;
     padding: 50px;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 400px;
     text-align: center;
-    margin: 20px auto; /* Adjust margin to center the converter in the Tools page */
+    margin: -150px auto; /* Adjust margin to center the converter in the Tools page */
 }
 
 #h2 {
@@ -17,7 +16,7 @@
 label {
     font-size: 1rem;
     font-weight: bold;
-    color: #2a9d8f;
+    color:#02df83;
 }
 
 input[type="file"],
@@ -25,14 +24,14 @@ select {
     width: 100%;
     padding: 8px;
     margin: 10px 0;
-    border: 2px solid #2a9d8f;
+    border: 2px solid#02df83;
     border-radius: 8px;
     box-sizing: border-box;
     font-size: 1rem;
 }
 
 .container-button {
-    background-color: #2a9d8f;
+    background-color: #02df83;
     color: white;
     border: none;
     border-radius: 8px;
@@ -72,8 +71,17 @@ select {
 h1 {
     font-size: 3rem;
     text-align: center;
-    margin-bottom: -50px;
     color: #4aa8c5; /* Set the main text color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for depth */
+    font-weight: bold; /* Make the text bold for emphasis */
+    text-align: center; /* Center the text */
+}
+
+h4 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 10vh;
+    color: #02df83; /* Set the main text color */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for depth */
     font-weight: bold; /* Make the text bold for emphasis */
     text-align: center; /* Center the text */
