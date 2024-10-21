@@ -26,9 +26,18 @@ const firebaseConfig = {
         .then((docSnap)=>{
             if(docSnap.exists()){
                 const userData=docSnap.data();
-                document.getElementById('loggedUserFName').innerText=userData.firstName;
-                document.getElementById('loggedUserEmail').innerText=userData.email;
-                document.getElementById('loggedUserLName').innerText=userData.lastName;
+                const firstNameElement = document.getElementById('loggedUserFName');
+                const emailElement = document.getElementById('loggedUserEmail');
+                const lastNameElement = document.getElementById('loggedUserLName');
+            
+                firstNameElement.innerText = "";  // Clear existing text (optional)
+                firstNameElement.innerText = userData.firstName;  // Set new value
+            
+                emailElement.innerText = "";  // Clear existing text (optional)
+                emailElement.innerText = userData.email;  // Set new value
+            
+                lastNameElement.innerText = "";  // Clear existing text (optional)
+                lastNameElement.innerText = userData.lastName;  // Set new value
 
             }
             else{
