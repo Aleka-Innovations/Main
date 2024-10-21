@@ -41,7 +41,7 @@
     const firstName=document.getElementById('fName').value;
     const lastName=document.getElementById('lName').value;
 
-    const auth=getAuth();
+    const auth=getAuth(app);
     const db=getFirestore();
 
     createUserWithEmailAndPassword(auth, email, password)
@@ -79,7 +79,7 @@
     event.preventDefault();
     const email=document.getElementById('email').value;
     const password=document.getElementById('password').value;
-    const auth=getAuth();
+    const auth=getAuth(app);
 
     signInWithEmailAndPassword(auth, email,password)
     .then((userCredential)=>{
