@@ -192,7 +192,7 @@ input[type="password"]::placeholder {
     input[type="text"],
     input[type="password"] {
         width: 90%; /* Increase width on smaller screens */
-        height: 60px; /* Increase height on smaller screens */
+        height: 50px; /* Increase height on smaller screens */
         font-size: 1.2rem; /* Increase font size for better visibility */
         margin-left: 5%; /* Keep left margin */
     }
@@ -200,7 +200,7 @@ input[type="password"]::placeholder {
     .downBTN,
     .upBTN,
     .toggle-password {
-        padding: 20px 20px; /* Adjust button padding */
+        padding: 16px 16px; /* Adjust button padding */
         font-size: 1.1rem; /* Slightly increase button font size */
     }
 
