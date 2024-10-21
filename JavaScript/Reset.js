@@ -18,6 +18,23 @@ const app = initializeApp(firebaseConfig);
 const forgotPassword = document.getElementById("forgotPassword");
 const forgotEmail = document.getElementById("resetEmail");
 
+function showMessage(message, divId) {
+    var messageDiv = document.getElementById(divId);
+
+    // Apply styles for visibility, color, and font weight
+    messageDiv.style.display = "block";
+    messageDiv.style.color = "#7fcaec";  // Light blue color
+    messageDiv.style.fontWeight = "bold"; // Bold font
+    messageDiv.style.transition = "opacity 1s"; // Smooth fade transition
+    messageDiv.innerHTML = message;
+    messageDiv.style.opacity = 1;
+
+    // Hide message after 5 seconds with fade out effect
+    setTimeout(function () {
+        messageDiv.style.opacity = 0;
+    }, 5000);
+}
+
 // Email validation function
 function isValidEmail(email) {
     // Regular expression for validating an Email
@@ -35,7 +52,7 @@ forgotPassword.addEventListener("click", () => {
 
     // Check if the email is valid
     if (!isValidEmail(email)) {
-        alert("Please enter a valid email address.");
+        showMessage("Please enter a valid email address.", "messageDiv"); // Change to showMessage
         forgotPassword.textContent = "Reset"; // Reset button text
         forgotPassword.disabled = false;  // Enable button again
         return;
@@ -48,7 +65,7 @@ forgotPassword.addEventListener("click", () => {
             forgotEmail.value = ""; // Clear the email input field
             forgotPassword.textContent = "Sent"; // Change the button text to "Sent"
 
-            alert("A password reset link has been sent to the provided email address.");
+            showMessage("A password reset link has been sent to the provided email address.", "messageDiv"); // Change to showMessage
 
             // Redirect after a short delay to give the user feedback
             setTimeout(() => {
@@ -62,11 +79,11 @@ forgotPassword.addEventListener("click", () => {
 
             // Check if the error is related to a network failure
             if (errorCode === 'auth/network-request-failed') {
-                alert("Network error. Please check your connection and try again.");
+                showMessage("Network error. Please check your connection and try again.", "messageDiv"); // Change to showMessage
             } else if (errorCode === 'auth/user-not-found') {
-                alert("There is no user with that email address.");
+                showMessage("There is no user with that email address.", "messageDiv"); // Change to showMessage
             } else {
-                alert("Error: " + errorMessage);
+                showMessage("Error: " + errorMessage, "messageDiv"); // Change to showMessage
             }
 
             // Revert button state back to "Reset" in case of any error

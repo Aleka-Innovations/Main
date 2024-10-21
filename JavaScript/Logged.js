@@ -30,7 +30,7 @@ onAuthStateChanged(auth, (user) => {
 
                     document.getElementById('signUpName').style.display = 'block';
                     document.getElementById('logout').style.display = 'block';
-                    document.getElementById('signInButton').style.display = 'none';
+                    document.getElementById('navBarSignIn').style.display = 'none';
                 } else {
                     console.log("No document found matching id");
                 }
@@ -52,7 +52,7 @@ logoutButton.addEventListener('click', () => {
             window.location.href = 'Signin.html';
             document.getElementById('signUpName').style.display = 'none';
             document.getElementById('logout').style.display = 'none';
-            document.getElementById('signInButton').style.display = 'block';
+            document.getElementById('navBarSignIn').style.display = 'block';
         })
         .catch((error) => {
             console.error('Error Signing out:', error);
