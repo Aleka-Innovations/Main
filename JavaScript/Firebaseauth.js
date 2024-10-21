@@ -93,11 +93,20 @@ signIn.addEventListener('click', (event) => {
     const auth = getAuth(app);
 
     // Check if the email is valid
-    if (!isValidEmail(email)) {
+    if (!email && !password) {
+        showMessage('Please enter both email and password!', 'signInMessage');
+        return; // Exit the function if both fields are empty
+    } else if (!email) {
+        showMessage('Please enter your email address!', 'signInMessage');
+        return; // Exit the function if email is empty
+    } else if (!password) {
+        showMessage('Please enter your password!', 'signInMessage');
+        return; // Exit the function if password is empty
+    } else if (!isValidEmail(email)) {
         showMessage('Please enter a valid email address!', 'signInMessage');
         return; // Exit the function if the email is invalid
     }
-
+    
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             showMessage('Login is successful', 'signInMessage');
