@@ -31,6 +31,16 @@ onAuthStateChanged(auth, (user) => {
                     document.getElementById('signUpName').style.display = 'block';
                     document.getElementById('logout').style.display = 'block';
                     document.getElementById('navBarSignIn').style.display = 'none';
+
+                    const newsText = document.getElementById('newsText');
+                    const signText = document.getElementById('signText');
+                    const newsDisplay = document.getElementById('newsDisplay');
+
+                    if (newsText && signText && newsDisplay) {
+                        newsText.style.display = "block";
+                        signText.style.display = "none";
+                        newsDisplay.style.display = "flex";
+                    }
                 } else {
                     console.log("No document found matching id");
                 }
@@ -45,15 +55,27 @@ onAuthStateChanged(auth, (user) => {
 
 // Logout functionality
 const logoutButton = document.getElementById('logout');
-logoutButton.addEventListener('click', () => {
-    localStorage.removeItem('loggedInUserId');
-    signOut(auth)
-        .then(() => {
-            document.getElementById('signUpName').style.display = 'none';
-            document.getElementById('logout').style.display = 'none';
-            document.getElementById('navBarSignIn').style.display = 'block';
-        })
-        .catch((error) => {
-            console.error('Error Signing out:', error);
-        });
-});
+if (logoutButton) {
+    logoutButton.addEventListener('click', () => {
+        localStorage.removeItem('loggedInUserId');
+        signOut(auth)
+            .then(() => {
+                window.location.href = window.location.href;
+                document.getElementById('signUpName').style.display = 'none';
+                document.getElementById('logout').style.display = 'none';
+                document.getElementById('navBarSignIn').style.display = 'block';
+
+                const newsText = document.getElementById('newsText');
+                const signText = document.getElementById('signText');
+                const newsDisplay = document.getElementById('newsDisplay');
+                if (newsText && signText && newsDisplay) {
+                    newsText.style.display = "none";
+                    signText.style.display = "block";
+                    newsDisplay.style.display = "none";
+                }
+            })
+            .catch((error) => {
+                console.error('Error Signing out:', error);
+            });
+    });
+}
