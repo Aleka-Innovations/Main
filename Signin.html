@@ -4,12 +4,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
     <link rel="icon" type="image/x-icon" href="Images/Logo.png">
-    <link rel="stylesheet 1" href="CSS/Main.css">
-    <link rel="stylesheet 2" href="CSS/Signin.css">
+    <link rel="stylesheet" href="CSS/Main.css">
+    <link rel="stylesheet" href="CSS/Signin.css">
 
     <script src="JavaScript/Main.js"></script>
+    <script type="module" src="JavaScript/Firebaseauth.js"></script>
 
-    <link rel="stylesheet 3" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <title>Contact</title>
 </head>
@@ -57,7 +58,7 @@
         <section id="main">
             <div class="container" id="signUp" style="display:none;">
                 <h1 class="form-title">Register</h1>
-                <form method="post" action="/Main/Signin.html">
+                <form method="post" action="">
                     <div id="signUpMessage" class="messageDiv" style="display:none;"></div>
                     <div class="label-container">
                         <i class="fas fa-user"></i>  <label for="password">Firstname</label>
@@ -98,7 +99,7 @@
 
             <div class="container" id="signIn">
                 <h1 class="form-title">Sign In</h1>
-                <form method="post" action="/Main/Home.html">
+                <form method="post" action="">
                     <div id="signInMessage" class="messageDiv" style="display:none;"></div>
                     <div class="label-container">
                         <i class="fas fa-envelope"></i>  <label for="email">E-Mail</label>
@@ -131,7 +132,6 @@
     </main>
 
     <script src="JavaScript/Signin.js"></script>
-    <script type="module" src="JavaScript/Firebaseauth.js"></script>
     
 <br><br><br><br><br><br><br><br><br><br>
 
