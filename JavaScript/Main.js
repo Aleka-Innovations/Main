@@ -1,7 +1,7 @@
 // Main
 
 function YouTube() {
-    window.open("")
+    window.open("https://youtube.com/@aleka_2024?si=PvfJFMh3HnF8bCVS")
 }
 
 function Discord() {
@@ -9,7 +9,7 @@ function Discord() {
 }
 
 function TikTok() {
-    window.open("")
+    window.open("https://www.tiktok.com/@aleka_2024_?_t=8qkkwIFrOwj&_r=1")
 }
 
 function Twitter() {
