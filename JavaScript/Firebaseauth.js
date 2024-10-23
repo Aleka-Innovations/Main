@@ -52,7 +52,7 @@ if (!isValidEmail(email)) {
     return; 
 }
 
-if (!firstName || !lastName || !password) {
+if (!firstName || !password) {
     showMessage('Please fill out the required details.', 'signUpMessage');
     return; 
 }
