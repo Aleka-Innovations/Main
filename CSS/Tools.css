@@ -33,6 +33,7 @@ select {
 }
 
 .container-button {
+    font-weight: bolder;
     background-color: #02df83;
     color: white;
     border: none;
