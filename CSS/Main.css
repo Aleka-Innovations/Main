@@ -473,7 +473,7 @@ a {
     }
 
     .navbar .toggle_btn {
-        display: flex;
+        display: block;
     }
 
     .dropdown_menu {
