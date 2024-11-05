@@ -167,6 +167,7 @@ a {
     background-color: transparent;
     font-size: 200%;
     position: fixed;
+    margin-right: -20px;
 }
 
 .action_btn {
