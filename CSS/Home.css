@@ -1,0 +1,201 @@
+/* Main section styling */
+section#main {
+    height: calc(100vh - 50vh);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 20px; /* Added padding for mobile */
+}
+
+/* Heading styling */
+#main h1,
+h1 {
+    margin-top: 250px;
+    font-size: 5vh; /* Scales with viewport height */
+    margin-bottom: 1rem;
+    color: #4aa8c5;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Paragraph styling */
+#main p {
+    font-size: 3vh; /* Scales with viewport height */
+    font-style: italic;
+    color: #4aa8c5;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Join button styling */
+.join {
+    width: 40vh; /* Responsive width */
+    height: 10vh; /* Responsive height */
+    border-color: #5db354;
+    border-style: solid;
+    border-radius: 10px;
+    background-color: #73e269;
+    transition: .2s ease;
+    font-weight: bold;
+    color: #fff;
+    font-size: 6vh; /* Responsive font size */
+    margin: 250px auto; /* Centered and spaced below the top text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.join:hover {
+    scale: 1.1;
+    border-color: #73e269;
+    background-color: #5db354;
+}
+
+.join:active {
+    scale: 0.8;
+}
+
+.countdown {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem; /* Adjusted to fit better */
+    color: #fff;
+    margin-bottom: 20vh;
+}
+
+.time-unit {
+    margin: 0 20px;
+    text-align: center;
+}
+
+.time-unit span {
+    display: block;
+    font-size: 5vh;
+    font-weight: bold;
+    color: #4aa8c5;
+}
+
+.label {
+    font-size: 1.2rem;
+    color: #4aa8c5;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Feedback input container */
+.feedback-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    width: 90%; /* Make it responsive */
+    max-width: 400px; /* Limit max width for better layout */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add padding for better spacing */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+#feedback {
+    padding: 15px;
+    width: 100%; /* Full width for better responsiveness */
+    max-width: 300px; /* Limit max width */
+    margin-bottom: 15px; /* Spacing between input and button */
+    border: 2px solid #28a745; /* Green border for a modern look */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Increase font size */
+    transition: border-color 0.3s ease; /* Smooth border transition */
+}
+
+#feedback:focus {
+    outline: none; /* Remove default outline */
+    border-color: #218838; /* Darker green on focus */
+}
+
+#submitFeedback {
+    padding: 15px 30px; /* Increased padding */
+    cursor: pointer;
+    background-color: #28a745; /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Increase font size */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+#submitFeedback:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+/* Mobile Friendly Styles */
+@media (max-width: 500px) {
+    .feedback-input-container {
+        max-width: 90%; /* Responsive max width for smaller screens */
+        padding: 15px; /* Reduce padding on smaller screens */
+    }
+
+    #feedback,
+    #submitFeedback {
+        max-width: 100%; /* Full width for smaller screens */
+        font-size: 4vh; /* Responsive font size */
+    }
+}
+
+@media (max-width: 750px) {
+    .join {
+        margin-top: 40vh;
+    }
+
+    .countdown {
+       font-size: small;
+    }
+
+    .time-unit span {
+        font-size: 4vh;
+     }
+}
+
+@media (max-width: 600px) {
+    .join {
+        margin-top: 50vh;
+    }
+
+    .countdown {
+        font-size: small;
+    }
+
+    .time-unit span {
+        font-size: 3vh;
+     }
+
+     .time-unit {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 550px) {
+    .time-unit span {
+        font-size: 2.3vh;
+     }
+
+     .time-unit {
+        margin: 0 8px;
+    }
+}
+
+@media (max-width: 500px) {
+    .time-unit span {
+        font-size: 2vh;
+     }
+
+     .time-unit {
+        margin: 0 5px;
+    }
+}

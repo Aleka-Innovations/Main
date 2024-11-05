@@ -1,0 +1,125 @@
+section#main {
+  height: calc(100vh - 50vh);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 20px; /* Add padding for spacing */
+}
+
+#main h1 {
+  color: orange;
+  margin-top: 150px; /* Reduced margin for better vertical centering */
+  font-size: 2.5rem; /* Slightly smaller for a more compact look */
+  margin-bottom: 0.5rem; /* Reduced margin for tighter layout */
+}
+
+#main h2 {
+  color: #f0f0f0; /* Lighter color for contrast against the dark background */
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1.5rem; /* Adjusted font size */
+  margin-bottom: 20px; /* Added margin for spacing */
+}
+
+#main hr {
+  border: none;
+  width: 50%; /* Keep width smaller for a refined look */
+  height: 4px; /* Thinner line */
+  background-color: orange; /* Match with header color */
+  border-radius: 10px;
+  margin: 20px auto; /* Center align with auto margins */
+}
+
+.news-item {
+  background-color: #fff; /* White background for contrast */
+  border: 3px solid #4aa8c5; /* Subtle border */
+  border-radius: 8px;
+  padding: 15px; /* Reduced padding for compactness */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions */
+  margin-bottom: 50vh;
+  width: 50%;
+  margin: auto;
+}
+
+.news-item:hover {
+  transform: translateY(-2px); /* Lift effect on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.news-title {
+  font-size: 1.25rem; /* Slightly smaller title */
+  color: #4aa8c5;
+  margin-bottom: 10px;
+}
+
+.news-date {
+  font-weight: bolder;
+  font-size: .9rem; /* Adjusted date size */
+  color: #4aa8c5;
+  margin-bottom: 10px; /* Reduced margin for tighter layout */
+}
+
+.news-description {
+  font-weight: bolder;
+  font-size: 1rem; /* Adjusted description size */
+  color:  #4aa8c5;
+  margin-bottom: 15px; /* Reduced margin for tighter layout */
+}
+
+.read-more {
+  color:  #4aa8c5;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+.read-more:hover {
+  color: #0056b3; /* Darker blue on hover */
+  text-decoration: underline;
+}
+
+.news-image {
+  width: 100%; /* Set width to 90% of the container */
+  height: auto; /* Maintain aspect ratio */
+  margin: 10px auto; /* Space around the image */
+}
+
+@media (max-width: 1200px) {
+  #main hr {
+      width: 60%; /* Adjust width for smaller screens */
+  }
+
+  .news-container {
+      max-width: 90%; /* Full width for smaller devices */
+  }
+}
+
+@media (max-width: 992px) {
+  #main hr {
+      width: 70%; /* Adjust width for smaller screens */
+  }
+  .news-item {
+    width: 90%;
+  }
+}
+
+@media (max-width: 576px) {
+  #main hr {
+      width: 90%; /* Full width on extra small devices */
+  }
+
+  #main h1 {
+      font-size: 2rem; /* Adjust for small screens */
+  }
+
+  #main h2 {
+      font-size: 1.25rem; /* Adjust for small screens */
+  }
+
+  .news-title {
+      font-size: 1.1rem; /* Adjust for small screens */
+  }
+}

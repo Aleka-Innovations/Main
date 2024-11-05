@@ -1,0 +1,125 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="icon" type="image/x-icon" href="Images/Logo.png">
+    <link rel="stylesheet" href="CSS/Main.css">
+    <link rel="stylesheet" href="CSS/Tools.css">
+
+    <script src="JavaScript/Main.js"></script>
+    <script type="module" src="JavaScript/Logged.js"></script>
+
+    <title>Tools</title>
+</head>
+<body>
+    <header class="background-header"> </header>
+
+    <div class="navbar-container">
+        <div class="navbar navbar1">
+            <div class="logo">
+                <a href="Home.html"><img src="Images/Logo.png" alt="Logo"></a>
+            </div>
+            <div class="logotext">
+                <a href="Home.html"><p>Aleka</p></a>
+            </div>
+        </div>
+        <div class="navbar navbar2">
+            <ul class="links">
+                <li><a href="Home.html" class="underline">Home</a></li>
+                <li><a href="About.html" class="underline">About</a></li>
+                <li><a href="Tools.html" class="disabled">Tools</a></li>
+                <li><a href="Rules.html" class="underline">Rules</a></li>
+                <li><a href="Contact.html" class="underline">Contact</a></li>
+                <li><a href="News.html" class="underline" id="news">News</a></li>
+            </ul>
+        </div>
+        <div class="navbar navbar3">
+            <a href="Profile.html" id="signUpName" class="action_btn4" style="display: none;">Name</a>
+            <button id="logout" class="action_btn3" style="display: none;">Log Out</button>
+            <a href="Signin.html" class="action_btn" id="navBarSignIn" style="display: block;">Sign In</a>
+            <a href="JoinUs.html" class="action_btn2">Join Us</a>
+            <button class="toggle_btn">☰</button>
+        </div>
+    </div>
+    <div class="dropdown_menu">
+        <li><a href="Home.html" class="underline">Home</a></li>
+        <li><a href="About.html" class="underline">About</a></li>
+        <li><a href="Tools.html" class="disabled">Tools</a></li>
+        <li><a href="Rules.html" class="underline">Rules</a></li>
+        <li><a href="Contact.html" class="underline">Contact</a></li>
+        <li><a href="News.html" class="underline" id="news">News</a></li>
+        <li><a href="Signin.html" class="action_btn">Sign In</a></li>
+        <li><a href="JoinUs.html" class="action_btn2">Join Us</a></li>
+    </div>
+
+    <main>
+        <section id="main">
+            <br><br><br><br><br><br><br>
+            <h1>Our Tools</h1>
+            <h4>Format Pictures</h2>
+            <br><br><br><br><br>
+            <div id="converter">
+                <input type="file" id="fileInput" class="input" accept="image/*">
+                <br>
+
+                <label for="formatSelect">Choose Format:</label>
+                <select id="formatSelect">
+                  <option value="image/jpeg">JPEG</option>
+                  <option value="image/png">PNG</option>
+                  <option value="image/webp">WebP</option>
+                  <option value="image/bmp">BMP</option>
+                  <option value="image/gif">GIF</option>
+                  <option value="image/tiff">TIFF</option>
+                  <option value="image/svg+xml">SVG</option>
+                  <option value="image/x-icon">ICO</option>
+                  <option value="image/heic">HEIC</option>
+                  <option value="image/avif">AVIF</option>
+                </select>
+                <br><br>
+
+                <button id="convertButton" class="container-button">Convert</button>
+                <br><br>
+
+                <canvas id="canvas" style="display:none;"></canvas>
+                <br>
+                <a id="downloadLink" style="display:none;" download="converted-image" class="container-small">Download</a>
+                <p id="error">This image format is not supported for in-browser conversion.</p>
+            </div>
+
+        </section>
+    </main>
+    
+    <div class="social-container">
+        <img src="Images/Twitter.png" alt="" onclick="Twitter()" class="social">
+        <img src="Images/Discord.png" alt="" onclick="Discord()" class="social">
+        <img src="Images/YT.png" alt="" onclick="YouTube()" class="social">
+        <img src="Images/Tiktok.png" alt="" onclick="TikTok()" class="social">
+
+        <br>
+
+        <p class="copyright">© Copyright 2024 Aleka. All rights reserved.</p>
+    </div>
+
+    <script>
+        const toggleBtn = document.querySelector(".toggle_btn")
+        const dropDownMenu = document.querySelector(".dropdown_menu")
+        
+        toggleBtn.onclick = function () {
+
+            dropDownMenu.classList.toggle("open")
+            const isOpen = dropDownMenu.classList.contains("open")
+
+            if (isOpen)
+            {
+                toggleBtn.innerHTML = "➤"
+            } else
+            {
+                toggleBtn.innerHTML = "☰"
+            }
+        }
+    </script>
+
+<script src="JavaScript/Tools.js"></script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+/* Main Section Styling */
+section#main {
+    height: calc(100vh - 50vh); /* Adjusted height */
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Vertical layout */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    text-align: center; /* Center text */
+    color: #fff; /* White text color */
+}
+
+/* Header Title in Main Section */
+section#main .form-title {
+    margin-top: 15vh; /* Top margin */
+    font-size: 3rem; /* Font size */
+    margin-bottom: 1rem; /* Bottom margin */
+    color: #4aa8c5; /* Text color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for depth */
+    font-weight: bold; /* Bold font */
+    text-align: center; /* Center text */
+}
+
+/* Label Styling */
+label {
+    font-size: 1rem; /* Font size */
+    color: #4aa8c5; /* Text color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for depth */
+    font-weight: bold; /* Bold font */
+    text-align: center; /* Center text */
+}
+
+/* Universal Box-Sizing */
+* {
+    box-sizing: border-box; /* Box sizing model */
+}
+
+.links p {
+    color: #4aa8c5; /* Text color */
+    font-weight: bolder;
+    font-size: 2vh;
+}
+
+/* Container for Input Fields */
+.input-group {
+    display: flex; /* Flexbox layout */
+    align-items: flex-start; /* Align items at the start (top) */
+    justify-content: space-between; /* Space items evenly */
+    width: 100%; /* Full width */
+    margin-top: 1vh; /* Space between label and input fields */
+}
+
+/* Input Container Styling */
+#contact-inputs,
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+    width: 400px; /* Width of input fields */
+    height: 50px; /* Height of input fields */
+    border: none; /* No border */
+    outline: none; /* Remove outline */
+    padding-left: 25px; /* Left padding */
+    font-weight: 500; /* Font weight */
+    color: #666; /* Text color */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Styling for Textarea */
+textarea {
+    height: 140px; /* Height for textarea */
+    padding-top: 15px; /* Top padding */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Focus State for Input Fields */
+#contact-inputs:focus,
+input[type="email"]:focus,
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border: 2px solid #a3b5f7; /* Border color on focus */
+}
+
+/* Placeholder Styling */
+#contact-inputs::placeholder,
+input[type="email"]::placeholder,
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+    color: #a9a9a9; /* Placeholder text color */
+}
+
+/* Submit Button Styling */
+.downBTN {
+    font-weight: bolder;
+    align-items: center; /* Center items */
+    padding: 15px 30px; /* Padding */
+    font-size: 16px; /* Font size */
+    color: #fff; /* Text color */
+    gap: 10px; /* Gap between items */
+    border: none; /* No border */
+    border-radius: 10px; /* Rounded corners */
+    background: linear-gradient(270deg, #a3b5f7, #7fcaec); /* Background gradient */
+    cursor: pointer; /* Pointer cursor */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Transition effects */
+}
+
+.upBTN {
+    margin-top: 1vh;
+    font-weight: bolder;
+    align-items: center; /* Center items */
+    padding: 15px 70px; /* Padding */
+    font-size: 16px; /* Font size */
+    color: #fff; /* Text color */
+    gap: 10px; /* Gap between items */
+    border: none; /* No border */
+    border-radius: 10px; /* Rounded corners */
+    background: linear-gradient(270deg, #a3b5f7, #7fcaec); /* Background gradient */
+    cursor: pointer; /* Pointer cursor */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Transition effects */
+}
+
+.toggle-password {
+    margin-left: 1vh;
+    font-weight: bolder;
+    align-items: center; /* Center items */
+    padding: 15px 15px; /* Padding */
+    font-size: 16px; /* Font size */
+    color: #fff; /* Text color */
+    gap: 10px; /* Gap between items */
+    border: none; /* No border */
+    border-radius: 10px; /* Rounded corners */
+    background: linear-gradient(270deg, #a3b5f7, #7fcaec); /* Background gradient */
+    cursor: pointer; /* Pointer cursor */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Transition effects */
+}
+
+.toggle-password:hover {
+    transform: scale(1.05); /* Scale effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Box shadow */
+    background: linear-gradient(270deg, #7fcaec, #a3b5f7); /* Hover gradient */
+}
+
+.upBTN:hover {
+    transform: scale(1.05); /* Scale effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Box shadow */
+    background: linear-gradient(270deg, #7fcaec, #a3b5f7); /* Hover gradient */
+}
+
+/* Hover Effect for Buttons */
+.downBTN:hover {
+    transform: scale(1.05); /* Scale effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Box shadow */
+    background: linear-gradient(270deg, #7fcaec, #a3b5f7); /* Hover gradient */
+}
+
+/* Label Container */
+.label-container {
+    margin-top: 3vh;
+    margin-bottom: 1vh;
+    text-align: left; /* Keep text left-aligned */
+    width: 100%; /* Full width */
+}
+
+/* Adjustments for .recover */
+.recover {
+    align-self: flex-end; /* Align the recover link to the right */
+    margin-top: 1vh; /* Space above the link */
+    margin-left: 50%; /* Adjust this value to shift further right */
+}
+
+.recover a {
+    color: #7fcaec;
+    font-size: 1.5vh; /* Adjust font size */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth transition */
+}
+
+.recover a:hover {
+    color: #a3b5f7; /* Change color on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Responsive Design */
+@media (min-width: 992px) {
+
+}
+
+@media (max-width: 576px) {
+    /* Responsive styles for smaller screens */
+    .label-container {
+        margin-left: 5%;
+    }
+
+    #contact-inputs,
+    input[type="email"],
+    input[type="text"],
+    input[type="password"] {
+        width: 90%; /* Increase width on smaller screens */
+        height: 50px; /* Increase height on smaller screens */
+        font-size: 1.2rem; /* Increase font size for better visibility */
+        margin-left: 5%; /* Keep left margin */
+    }
+
+    .downBTN,
+    .upBTN {
+        padding: 15px 30px; /* Adjust button padding */
+        font-size: 1.3rem; /* Slightly increase button font size */
+    }
+
+    .toggle-password {
+        padding: 16px 16px; /* Adjust button padding */
+        font-size: 1.1rem; /* Slightly increase button font size */
+    }
+
+    /* Increase textarea size for smaller screens */
+    textarea {
+        height: 160px; /* Increase textarea height */
+    }
+}

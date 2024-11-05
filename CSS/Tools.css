@@ -1,0 +1,91 @@
+/* Additional styles for the converter form */
+#converter {
+    padding: 50px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin: -150px auto; /* Adjust margin to center the converter in the Tools page */
+}
+
+#h2 {
+    color: #264653;
+}
+
+label {
+    font-size: 1rem;
+    font-weight: bold;
+    color:#02df83;
+}
+
+input[type="file"],
+select {
+    color: white;
+    background-color: black;
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 2px solid#02df83;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+.container-button {
+    font-weight: bolder;
+    background-color: #02df83;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform to transition */
+}
+
+.container-button:hover {
+    background-color: #1f776d;
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+.container-small {
+    text-decoration: none;
+    color: white;
+    background-color: #e76f51;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform to transition */
+}
+
+.container-small:hover {
+    background-color: #ac4b33;
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+#error {
+    color: red;
+    display: none;
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    color: #4aa8c5; /* Set the main text color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for depth */
+    font-weight: bold; /* Make the text bold for emphasis */
+    text-align: center; /* Center the text */
+}
+
+h4 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 10vh;
+    color: #02df83; /* Set the main text color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for depth */
+    font-weight: bold; /* Make the text bold for emphasis */
+    text-align: center; /* Center the text */
+}

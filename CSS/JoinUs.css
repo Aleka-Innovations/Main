@@ -1,0 +1,49 @@
+/* Main section styling */
+section#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    height: 150vh; /* Full viewport height */
+}
+
+/* Styling for the heading inside the main section */
+#main h1 {
+    color: #4aa8c5;
+    margin-top: 375px;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+#main p {
+    color: rgb(245, 113, 113);
+    font-weight: bolder;
+    font-size: 1rem;
+}
+
+
+/* Main container styling */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110vh; /* Full height of the viewport */
+}
+
+/* Section styling */
+section {
+    text-align: center;
+    width: 100%; /* Full width */
+    max-width: 100%; /* Ensure it doesn't limit the iframe width */
+    height: 100vh; /* Full height of its container */
+    padding: 20px; /* Optional: add some padding */
+}
+
+/* Iframe styling */
+iframe {
+    width: 100%; /* Full width of its container */
+    height: 100vh; /* Full height of its container (section) */
+    border: none; /* Remove border */
+    background-color: transparent; /* Ensure iframe has no background */
+}
