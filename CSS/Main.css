@@ -337,15 +337,7 @@ a {
     justify-content: center;
 }
 
-.dropdown_menu .BTNdisabled {
-    margin-right: 100px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
 .dropdown_menu .BTN2disabled {
-    margin-top: -5px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -462,10 +454,6 @@ a {
     }
 
     .BTNdisabled {
-        margin-right: 50px;
-    }
-
-    .BTN2disabled {
         margin-right: 50px;
     }
 
