@@ -30,6 +30,7 @@ section#main {
   background-color: orange; /* Match with header color */
   border-radius: 10px;
   margin: 20px auto; /* Center align with auto margins */
+  display: block;
 }
 
 .news-item {
