@@ -27,10 +27,10 @@ section#main {
   border: none;
   width: 50%; /* Keep width smaller for a refined look */
   height: 4px; /* Thinner line */
-  background-color: orange; /* Match with header color */
   border-radius: 10px;
   margin: 20px auto; /* Center align with auto margins */
   display: block;
+  border: 2px solid orange;
 }
 
 .news-item {
