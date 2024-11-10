@@ -45,6 +45,10 @@ section#main {
   margin: auto;
 }
 
+.social-container {
+  margin-top: 150vh;
+}
+
 .news-item:hover {
   transform: translateY(-2px); /* Lift effect on hover */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
